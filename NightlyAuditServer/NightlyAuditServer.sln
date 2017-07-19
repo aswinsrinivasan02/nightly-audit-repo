@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NightlyAuditAPI.Contract", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NightlyAuditAPI", "NightlyAuditAPI\NightlyAuditAPI.csproj", "{15A0915A-4783-4B4A-A985-0765177BA98D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{9CAC1326-DFFB-4D31-9B41-72B6DF46CFC2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{134D35CC-16F7-4191-AB15-F778241AB5C2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{AC3BA04E-F132-412F-AAF3-84BFBFAFC3E3}"
@@ -34,8 +32,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{30D5FAFA-8BF4-401D-B011-D34CAA942FA3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTODomainConvertor", "DTODomainConvertor\DTODomainConvertor.csproj", "{5A5D3725-9962-4455-8189-85982953B687}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlatformServices", "PlatformService\PlatformServices.csproj", "{BF5EE2CC-875F-4708-994E-E156B59DA200}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QuartzDemo", "QuartzDemo", "{9CCB9B69-C80A-4D68-AA19-C9E14A7A8650}"
 EndProject
@@ -63,10 +59,6 @@ Global
 		{15A0915A-4783-4B4A-A985-0765177BA98D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15A0915A-4783-4B4A-A985-0765177BA98D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15A0915A-4783-4B4A-A985-0765177BA98D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9CAC1326-DFFB-4D31-9B41-72B6DF46CFC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CAC1326-DFFB-4D31-9B41-72B6DF46CFC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CAC1326-DFFB-4D31-9B41-72B6DF46CFC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CAC1326-DFFB-4D31-9B41-72B6DF46CFC2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{134D35CC-16F7-4191-AB15-F778241AB5C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{134D35CC-16F7-4191-AB15-F778241AB5C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{134D35CC-16F7-4191-AB15-F778241AB5C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -103,10 +95,6 @@ Global
 		{5A5D3725-9962-4455-8189-85982953B687}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A5D3725-9962-4455-8189-85982953B687}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A5D3725-9962-4455-8189-85982953B687}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BF5EE2CC-875F-4708-994E-E156B59DA200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF5EE2CC-875F-4708-994E-E156B59DA200}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF5EE2CC-875F-4708-994E-E156B59DA200}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF5EE2CC-875F-4708-994E-E156B59DA200}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7B93EBE4-CD43-47A1-8003-417E16EF94E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7B93EBE4-CD43-47A1-8003-417E16EF94E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B93EBE4-CD43-47A1-8003-417E16EF94E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
