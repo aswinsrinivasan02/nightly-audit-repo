@@ -24,7 +24,7 @@ namespace ConsoleApplication2
 
             scheduler.ScheduleJob(jobDetail, trigger);
 
-            Thread.Sleep(TimeSpan.FromSeconds(8));
+            Thread.Sleep(TimeSpan.FromSeconds(10));
             scheduler.PauseJob(new JobKey("name", "group"));
             Thread.Sleep(TimeSpan.FromSeconds(8));
             scheduler.ResumeJob(new JobKey("name", "group"));
