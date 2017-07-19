@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Orchestration>
+  <WorkflowConfiguration name="LoginUser" startSequenceId ="1" exceptionPolicy="Default">
+    <WorkItemInvocation>
+      <InvokeSequence sequenceId="1" name="AuthenticateUser" transactionContext="Requires" commitInvoke="OnCompletion" breakOnFailure="OnFailure" responseKey="OUTPUT" exceptionPolicy="Default">
+        </InvokeSequence>
+    </WorkItemInvocation>
+  </WorkflowConfiguration>
+
+  <WorkflowConfiguration name="GetAllProducts" startSequenceId ="1" exceptionPolicy="Default">
+    <WorkItemInvocation>
+      <InvokeSequence sequenceId="1" name="GetAllProducts" transactionContext="Requires" commitInvoke="OnCompletion" breakOnFailure="OnFailure" responseKey="OUTPUT" exceptionPolicy="Default">
+      </InvokeSequence>
+    </WorkItemInvocation>
+  </WorkflowConfiguration>
+
+  <WorkflowConfiguration name="UpdateProduct" startSequenceId ="1" exceptionPolicy="Default">
+    <WorkItemInvocation>
+      <InvokeSequence sequenceId="1" name="UpdateProduct" transactionContext="Requires" commitInvoke="OnCompletion" breakOnFailure="OnFailure" responseKey="OUTPUT" exceptionPolicy="Default">
+      </InvokeSequence>
+    </WorkItemInvocation>
+  </WorkflowConfiguration>
+
+  <WorkflowConfiguration name="GetAuditJob" startSequenceId ="1" exceptionPolicy="Default">
+    <WorkItemInvocation>
+      <InvokeSequence sequenceId="1" name="GetAuditJob" transactionContext="Requires" commitInvoke="OnCompletion" breakOnFailure="OnFailure" responseKey="OUTPUT" exceptionPolicy="Default">
+      </InvokeSequence>
+    </WorkItemInvocation>
+  </WorkflowConfiguration>
+  
+</Orchestration>

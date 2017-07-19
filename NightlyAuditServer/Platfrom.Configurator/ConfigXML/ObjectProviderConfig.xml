@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ObjectProviderConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<ObjectProviderCollection>
+    <ObjectProvider>
+      <TypeName>SG.NightlyAudit.Domain.AuditHistory, SG.NightlyAudit.Domain</TypeName>
+      <ObjectProviderTypeName>SG.NightlyAudit.Persistence.MSSql.Convertables.AuditHistoryConvertable, SG.NightlyAudit.Persistence.MSSql</ObjectProviderTypeName>
+    </ObjectProvider>
+    <ObjectProvider>
+      <TypeName>SG.NightlyAudit.Domain.Products, SG.NightlyAudit.Domain</TypeName>
+      <ObjectProviderTypeName>SG.NightlyAudit.Persistence.MSSql.Convertables.ProductsConvertable, SG.NightlyAudit.Persistence.MSSql</ObjectProviderTypeName>
+    </ObjectProvider>
+  </ObjectProviderCollection>
+</ObjectProviderConfig>

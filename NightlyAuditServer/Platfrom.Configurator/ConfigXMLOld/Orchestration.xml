@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Orchestration>
+  <!-- New Player Enrollment Workflow -->
+  <WorkflowConfiguration name="NewPlayerEnrollment" startSequenceId ="1" exceptionPolicy="Default">
+    <WorkItemInvocation>
+      <InvokeSequence sequenceId="1"
+                      name="NewPlayerEnrollment"
+                      transactionContext="Requires"
+                      commitInvoke="OnCompletion"
+                      breakOnFailure="OnFailure"
+                      responseKey="OUTPUT"
+                      exceptionPolicy="Default">
+      </InvokeSequence>
+    </WorkItemInvocation>
+  </WorkflowConfiguration>
+
+  <!-- Player Enrollment Workflow -->
+  <WorkflowConfiguration name="EnrollPlayer" startSequenceId ="1" exceptionPolicy="Default">
+    <WorkItemInvocation>
+      <InvokeSequence sequenceId="1"
+                      name="CreatePlayer"
+                      transactionContext="Requires"
+                      commitInvoke="OnCompletion"
+                      breakOnFailure="OnFailure"
+                      responseKey="CREATEPLAYERRESULT"
+                      exceptionPolicy="Default">
+        <Antecedent sequenceId="2" execution="Synchronous" invocation="OnSuccess" />
+      </InvokeSequence>
+      <InvokeSequence sequenceId="2"
+                      name="EnrollPlayer"
+                      transactionContext="Requires"
+                      commitInvoke="OnCompletion"
+                      breakOnFailure="OnFailure"
+                      responseKey="OUTPUT"
+                      exceptionPolicy="Default" />
+    </WorkItemInvocation>
+  </WorkflowConfiguration>
+
+  <!-- Get All Players Workflow -->
+  <WorkflowConfiguration name="GetAllPlayers" startSequenceId ="1" exceptionPolicy="Default">
+    <WorkItemInvocation>
+      <InvokeSequence sequenceId="1" name="GetAllPlayers" transactionContext="Requires" commitInvoke="OnCompletion"  breakOnFailure="OnFailure" responseKey="OUTPUT" exceptionPolicy="Default">
+      </InvokeSequence>
+    </WorkItemInvocation>
+  </WorkflowConfiguration>
+
+  <WorkflowConfiguration name="FindPlayerByPlayerId" startSequenceId ="1" exceptionPolicy="Default">
+    <WorkItemInvocation>
+      <InvokeSequence sequenceId="1" name="FindPlayerByPlayerId" transactionContext="Requires" commitInvoke="OnCompletion"  breakOnFailure="OnFailure" responseKey="OUTPUT" exceptionPolicy="Default">
+      </InvokeSequence>
+    </WorkItemInvocation>
+  </WorkflowConfiguration>
+
+
+  <WorkflowConfiguration name="EditPlayer" startSequenceId ="1" exceptionPolicy="Default">
+    <WorkItemInvocation>
+      <InvokeSequence sequenceId="1" name="EditPlayer" transactionContext="Requires" commitInvoke="OnCompletion"  breakOnFailure="OnFailure" responseKey="OUTPUT" exceptionPolicy="Default">
+      </InvokeSequence>
+    </WorkItemInvocation>
+  </WorkflowConfiguration>
+
+  <WorkflowConfiguration name="GetStatesByCountryId" startSequenceId ="1" exceptionPolicy="Default">
+    <WorkItemInvocation>
+      <InvokeSequence sequenceId="1" name="GetStatesByCountryId" transactionContext="Requires" commitInvoke="OnCompletion"  breakOnFailure="OnFailure" responseKey="OUTPUT" exceptionPolicy="Default">
+      </InvokeSequence>
+    </WorkItemInvocation>
+  </WorkflowConfiguration>
+
+  <WorkflowConfiguration name="GetCitiesByStateId" startSequenceId ="1" exceptionPolicy="Default">
+    <WorkItemInvocation>
+      <InvokeSequence sequenceId="1" name="GetCitiesByStateId" transactionContext="Requires" commitInvoke="OnCompletion"  breakOnFailure="OnFailure" responseKey="OUTPUT" exceptionPolicy="Default">
+      </InvokeSequence>
+    </WorkItemInvocation>
+  </WorkflowConfiguration>
+
+  <WorkflowConfiguration name="GetGenders" startSequenceId ="1" exceptionPolicy="Default">
+    <WorkItemInvocation>
+      <InvokeSequence sequenceId="1" name="GetGenders" transactionContext="Requires" commitInvoke="OnCompletion"  breakOnFailure="OnFailure" responseKey="OUTPUT" exceptionPolicy="Default">
+      </InvokeSequence>
+    </WorkItemInvocation>
+  </WorkflowConfiguration>
+
+
+</Orchestration>

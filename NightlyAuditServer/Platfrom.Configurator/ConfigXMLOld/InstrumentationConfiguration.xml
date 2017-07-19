@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PerformanceCounter InstanceName="SiteController">
+  <!-- Category
+       Name:Performance counter category name
+       Description:Performance counter category description  -->
+  <!-- Counter
+       ID:Unique identifier for each counter
+       Name:Counter name
+       Type:Performance Counter Type for each counter
+       Description:Performance counter description -->
+  <!-- Type: NumberOfItemsHEX32 = 0,
+               NumberOfItemsHEX64 = 256,
+               NumberOfItems32 = 65536,
+               NumberOfItems64 = 65792,
+               CounterDelta32 = 4195328,
+               CounterDelta64 = 4195584,
+               SampleCounter = 4260864,
+               CountPerTimeInterval32 = 4523008,
+               CountPerTimeInterval64 = 4523264,
+               RateOfCountsPerSecond32 = 272696320,
+               RateOfCountsPerSecond64 = 272696576,
+               RawFraction = 537003008,
+                CounterTimer = 541132032,
+                Timer100Ns = 542180608,
+                SampleFraction = 549585920,
+                CounterTimerInverse = 557909248,
+                Timer100NsInverse = 558957824,
+                CounterMultiTimer = 574686464,
+                CounterMultiTimer100Ns = 575735040,
+                CounterMultiTimerInverse = 591463680,
+                CounterMultiTimer100NsInverse = 592512256,
+                AverageTimer32 = 805438464,
+                ElapsedTime = 807666944,
+                AverageCount64 = 1073874176,
+                SampleBase = 1073939457,
+                AverageBase = 1073939458,
+                RawBase = 1073939459,
+                CounterMultiBase = 1107494144,
+    -->
+  <Category Name="Workflow" Description="Monitors workflow performance">
+    <Counters Id="1" Name="ActiveExecutionCount_WorkflowCounter" Type="NumberOfItems32" Description="Active Execution Count of Workflow" />
+    <Counters Id="2" Name="ActiveExecutionCount_WorkItemCounter" Type="NumberOfItems32" Description="Active Execution Count of Worktem" />
+    <Counters Id="3" Name="ActiveExecutionCount_EnrollPlayer" Type="NumberOfItems32" Description="Active Execution Count of EnrollPlayer WorkFlow" />
+    <Counters Id="4" Name="ActiveExecutionCount_EnrollPlayer_CreatePlayer" Type="NumberOfItems32" Description="Active Execution Count of CreatePlayer WorkItem" />
+    <Counters Id="5" Name="ExecutionCount_WorkflowCounter" Type="NumberOfItems32" Description="Execution Count of WorkFlow" />
+    <Counters Id="6" Name="ExecutionCount_WorkItemCounter" Type="NumberOfItems32" Description="Execution Count of WorkItem" />
+    <Counters Id="7" Name="ExecutionCount_EnrollPlayer" Type="NumberOfItems32" Description="Execution Count of EnrollPlayer WorkFlow" />
+    <Counters Id="8" Name="ExecutionCount_EnrollPlayer_CreatePlayer" Type="NumberOfItems32" Description="Execution Count of CreatePlayer WorkIem" />
+    <Counters Id="9" Name="ExecutionCountPerSecond_WorkflowCounter" Type="RateOfCountsPerSecond32" Description="Execution Count Per Second of Workflow" />
+    <Counters Id="10" Name="ExecutionCountPerSecond_WorkItemCounter" Type="RateOfCountsPerSecond32" Description="Execution Count Per Second of Workitem" />
+    <Counters Id="11" Name="ExecutionCountPerSecond_EnrollPlayer" Type="RateOfCountsPerSecond32" Description="Execution Count Per Second of EnrollPlayer WorkFlow" />
+    <Counters Id="12" Name="ExecutionCountPerSecond_EnrollPlayer_CreatePlayer" Type="RateOfCountsPerSecond32" Description="Execution Count Per Second of CreatePlayer WorkIem" />
+    <Counters Id="13" Name="ExecutionAvgExecutionTime_WorkflowCounter" Type="AverageCount64" Description="Average Execution Time of WorkFlow" />
+    <Counters Id="14" Name="ExecutionAvgBaseExecutionTime_WorkflowCounter" Type="AverageBase" Description="Average Execution Time of WorkFlow" />
+    <Counters Id="15" Name="ExecutionAvgExecutionTime_WorkItemCounter" Type="AverageCount64" Description="Average Execution Time of Workitem" />
+    <Counters Id="16" Name="ExecutionAvgBaseExecutionTime_WorkItemCounter" Type="AverageBase" Description="Average Execution Time of Workitem" />
+    <Counters Id="17" Name="ExecutionAvgExecutionTime_EnrollPlayer" Type="AverageCount64" Description="Average Execution Time of EnrollPlayer WorkFlow" />
+    <Counters Id="18" Name="ExecutionAvgBaseExecutionTime_EnrollPlayer" Type="AverageBase" Description="Average Execution Time of EnrollPlayer WorkFlow" />
+    <Counters Id="19" Name="ExecutionAvgExecutionTime_EnrollPlayer_CreatePlayer" Type="AverageCount64" Description="Average Execution Time of CreatePlayer WorkIem" />
+    <Counters Id="20" Name="ExecutionAvgBaseExecutionTime_EnrollPlayer_CreatePlayer" Type="AverageBase" Description="Average Execution Time of CreatePlayer WorkIem" />
+  </Category>
+  <Category Name="Transaction" Description="Application Transaction status">
+    <Counters Id="21" Name="Transaction_Committed" Type="NumberOfItems32" Description="Shows number of transaction commited" />
+    <Counters Id="22" Name="Transaction_Rollback" Type="NumberOfItems32" Description="Shows number of transaction rolled back" />
+  </Category>
+  <Category Name="DistributedTransaction" Description="Application Distributed Transaction status">
+    <Counters Id="23" Name="DistributedTransaction_Committed" Type="NumberOfItems32" Description="Shows number of distributed transaction commited" />
+    <Counters Id="24" Name="DistributedTransaction_Rollback" Type="NumberOfItems32" Description="Shows number of distributed transaction rolled back" />
+  </Category>
+  <Category Name="Queries" Description="Application Distributed Transaction status">
+    <Counters Id="25" Name="ActiveQueries" Type="NumberOfItems32" Description="Shows number of active queries" />
+  </Category>
+</PerformanceCounter>

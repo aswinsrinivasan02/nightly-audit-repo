@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MessagingConfig Source="MOM_NA" TrackDeliveryStatus="true" HeartBeatInterval="1" IsNLBMode="false" ServerURI="http://127.0.0.1:1234">
+  <HttpPort>9953</HttpPort>
+  <TcpPort>9956</TcpPort>
+  <HighPriorityPoolSize >10</HighPriorityPoolSize>
+  <LowPriorityPoolSize>10</LowPriorityPoolSize>
+  <MaxQueueSize>100</MaxQueueSize>
+  <MessagingPoolSize>100</MessagingPoolSize>
+  <RetryCount>100</RetryCount>
+  <RetryIntervalInMs>10000</RetryIntervalInMs>
+  <GuaranteedChannelRetryCount>-1</GuaranteedChannelRetryCount>
+  <GuaranteedChannelRetryIntervalInMs>10000</GuaranteedChannelRetryIntervalInMs>
+</MessagingConfig>

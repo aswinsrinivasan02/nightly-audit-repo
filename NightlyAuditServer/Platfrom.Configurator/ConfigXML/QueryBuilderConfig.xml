@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<QueryBuilderConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <QueryBuilderCollection>
+    <QueryBuilder>
+      <TypeName>SG.NightlyAudit.Domain.AuditHistory, SG.NightlyAudit.Domain</TypeName>
+      <QueryBuilderTypeName>SG.NightlyAudit.Persistence.MSSql.QueryBuilder.AuditHistoryQueryBuilder, SG.NightlyAudit.Persistence.MSSql</QueryBuilderTypeName>
+    </QueryBuilder>
+    <QueryBuilder>
+      <TypeName>SG.NightlyAudit.Domain.Products, SG.NightlyAudit.Domain</TypeName>
+      <QueryBuilderTypeName>SG.NightlyAudit.Persistence.MSSql.QueryBuilder.ProductQueryBuilder, SG.NightlyAudit.Persistence.MSSql</QueryBuilderTypeName>
+    </QueryBuilder>
+    <QueryBuilder>
+      <TypeName>SG.NightlyAudit.Domain.AuditJob, SG.NightlyAudit.Domain</TypeName>
+      <QueryBuilderTypeName>SG.NightlyAudit.Persistence.MSSql.QueryBuilder.AuditJobQueryBuilder, SG.NightlyAudit.Persistence.MSSql</QueryBuilderTypeName>
+    </QueryBuilder>
+    <QueryBuilder>
+      <TypeName>BallyTech.Infrastructure.IDGeneration.IDRange, BallyTech.Infrastructure.Utilities, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL</TypeName>
+      <QueryBuilderTypeName>SG.NightlyAudit.Persistence.MSSql.IDRangeQueryBuilder, SG.NightlyAudit.Persistence.MSSql</QueryBuilderTypeName>
+    </QueryBuilder>
+  </QueryBuilderCollection>
+</QueryBuilderConfig>

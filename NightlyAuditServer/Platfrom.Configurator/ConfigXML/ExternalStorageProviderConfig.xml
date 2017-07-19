@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ExternalStorageProviderConfig>
+  <Provider Key="External-Redis" Type="Redis">
+    <ProviderConfig>
+      <Parameters>
+        <Param Key="ConnectionString" Value="WS-IN925:6379,allowAdmin=true,name=InSite,abortConnect=false" />
+      </Parameters>
+    </ProviderConfig>
+    <NumberGeneratorProviderConfig>
+      <Parameters>
+        <Param Key="ProviderType" Value="BallyTech.Infrastructure.ExternalData.NumberGenerator.RedisNumberGeneratorProvider,
+                                         BallyTech.Infrastructure.ExternalData, Version=3.0.0.0, 
+                                         Culture=neutral, PublicKeyToken=c03530e9d763a944" />
+        <Param Key="Database" Value="3" />
+        <Param Key="KeyFormat" Value="[Group]:[Key]" />
+      </Parameters>
+    </NumberGeneratorProviderConfig>
+    <!--<CacheProviderConfig>
+      <Parameters>
+        <Param Key="ProviderType" Value="BallyTech.Infrastructure.ExternalData.Caching.CacheStorageInnerRedis`2,
+                                      BallyTech.Infrastructure.ExternalData, Version=3.0.0.0, 
+                                      Culture=neutral, PublicKeyToken=c03530e9d763a944" />
+        <Param Key="Database" Value="0" />
+        <Param Key="KeyFormat" Value="[Group]_[Aggregate]_[AggregateID]" />
+      </Parameters>
+    </CacheProviderConfig>-->
+  </Provider>
+ </ExternalStorageProviderConfig>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<CommandBuilderConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CommandBuilderCollection>
+    <CommandBuilder>
+      <TypeName>SG.NightlyAudit.Domain.AuditHistory, SG.NightlyAudit.Domain</TypeName>
+      <CommandBuilderTypeName>SG.NightlyAudit.Persistence.MSSql.CommandBuilder.AuditHistoryCommandBuilder, SG.NightlyAudit.Persistence.MSSql</CommandBuilderTypeName>
+    </CommandBuilder>
+    <CommandBuilder>
+      <TypeName>SG.NightlyAudit.Domain.Products, SG.NightlyAudit.Domain</TypeName>
+      <CommandBuilderTypeName>SG.NightlyAudit.Persistence.MSSql.CommandBuilder.ProductsCommandBuilder, SG.NightlyAudit.Persistence.MSSql</CommandBuilderTypeName>
+    </CommandBuilder>
+  </CommandBuilderCollection>
+</CommandBuilderConfig>

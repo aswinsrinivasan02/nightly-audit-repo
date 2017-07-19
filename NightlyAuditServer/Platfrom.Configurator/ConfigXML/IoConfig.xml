@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FreeFormHostConfigurations>
+  <FreeFormHostConfiguration ProtocolName="Freeform1" ProtocolFactory="Ballytech.Protocol.Freeform.v1.Freeform,Ballytech.Protocol.Freeform.v1" IP="10.2.4.214">
+    <!--Hosts TransportProtocolType="tcp" Enabled="true">
+      <Host Name="tcpClient1" ListenPort="10005" LowLine="1" HighLine="64" SiteNumber="512" />
+      <ClientListenerPort>2401</ClientListenerPort>
+    </Hosts-->
+    <Hosts TransportProtocolType="udp" Enabled="true">
+      <BroadcastDetails Enabled="false" BroadcastIp="239.192.1.1" />
+      <Host Name="udp_client1" ListenPort="11112" BroadcastIp="239.192.1.2" SiteNumber="512" />
+      <ClientListenerPort>49152</ClientListenerPort>
+    </Hosts>
+    <DiaproBroadcastIp>235.235.2.2</DiaproBroadcastIp>
+    <DiaproBroadcastPort>23315</DiaproBroadcastPort>
+  </FreeFormHostConfiguration>
+  <FreeFormHostConfiguration ProtocolName="Freeform3" ProtocolFactory="Ballytech.Protocol.Freeform.v3.Freeform,Ballytech.Protocol.Freeform.v3" IP="10.2.4.214">
+    <!--<Hosts TransportProtocolType="tcp" Enabled="true">
+				<Host Name="tcpClient1" ListenPort="10007" LowLine="1" HighLine="64" SiteNumber="603" />
+				<ClientListenerPort>2401</ClientListenerPort>
+		  </Hosts>-->
+    <Hosts TransportProtocolType="udp" Enabled="true">
+      <BroadcastDetails Enabled="false" BroadcastIp="239.192.1.1" />
+      <Host Name="udp_client2" ListenPort="11113" BroadcastIp="239.192.1.3" SiteNumber="512" />
+      <ClientListenerPort>49152</ClientListenerPort>
+    </Hosts>
+    <DiaproBroadcastIp>235.235.2.2</DiaproBroadcastIp>
+    <DiaproBroadcastPort>23315</DiaproBroadcastPort>
+  </FreeFormHostConfiguration>
+</FreeFormHostConfigurations>

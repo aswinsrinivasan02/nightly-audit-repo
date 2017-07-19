@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Policies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="exceptionhandlePolicy1">
+  <ExceptionHandlePolicy name="Default">
+    <ExceptionHandlerConfig type="BallyTech.Library.ExceptionHandling.ApplicationExceptionHandler, BallyTech.Library.ExceptionHandling" handlerAction="Throw" exceptionType="System.Exception"  invokeSequence = "1"/>
+    <ExceptionHandlerConfig type="BallyTech.Library.ExceptionHandling.NullReferenceHandler, BallyTech.Library.ExceptionHandling" handlerAction="Rethrow" exceptionType="System.NullReferenceException" />
+    <ExceptionHandlerConfig type="BallyTech.Library.ExceptionHandling.OptimisticLockViolationHandler, BallyTech.Library.ExceptionHandling" handlerAction="InvokeOnFailure" invokeSequence="2" exceptionType="System.Data.SqlClient.SqlException, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <ExceptionHandlerConfig type="BallyTech.Library.ExceptionHandling.PrimaryKeyViolationHandler, BallyTech.Library.ExceptionHandling" handlerAction="Rethrow" invokeSequence="1" exceptionType="System.Data.SqlClient.SqlException, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />   
+  </ExceptionHandlePolicy>
+
+  <ExceptionHandlePolicy name="API.Data">
+     <ExceptionHandlerConfig type="BallyTech.Library.ExceptionHandling.DataExceptionHandler, BallyTech.Library.ExceptionHandling" handlerAction="Rethrow" exceptionType="System.Exception" />
+    <ExceptionConvertorConfig type="BallyTech.Library.ExceptionHandling.DataExceptionConvertor, BallyTech.Library.ExceptionHandling"  exceptionType="System.Exception" />
+  </ExceptionHandlePolicy>
+
+  <ExceptionHandlePolicy name="Service.Data">
+    <ExceptionHandlerConfig type="BallyTech.Library.ExceptionHandling.DataExceptionHandlerIdentifier, BallyTech.Library.ExceptionHandling" handlerAction="Convert" exceptionType="System.Exception" />
+    <ExceptionConvertorConfig type="BallyTech.Library.ExceptionHandling.DataExceptionConvertor, BallyTech.Library.ExceptionHandling"  exceptionType="System.Exception" />
+  </ExceptionHandlePolicy>
+  <!--<ExceptionHandlePolicy name="UIDefault">
+    <ExceptionHandlerConfig type="BallyTech.UI.Web.ExceptionHandling.JsonExceptionHandler, BallyTech.UI.Web.ExceptionHandling" handlerAction="Rethrow" exceptionType="BallyTech.UI.Web.Framework.JsonException,BallyTech.UI.Web.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <ExceptionHandlerConfig type="BallyTech.UI.Web.ExceptionHandling.ViewExceptionHandler, BallyTech.UI.Web.ExceptionHandling" handlerAction="Rethrow" exceptionType="BallyTech.UI.Web.Framework.ViewException,BallyTech.UI.Web.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <ExceptionHandlerConfig type="BallyTech.UI.Web.ExceptionHandling.SwallowHandler, BallyTech.UI.Web.ExceptionHandling" handlerAction="Swallow" exceptionType="System.Exception" />
+  </ExceptionHandlePolicy>-->
+</Policies>

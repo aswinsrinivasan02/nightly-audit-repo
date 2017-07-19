@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<WorkItemTypeConfiguration>
+  <WorkItemConfig name="CreatePlayer" type="BallyTech.Library.Workflow.Player.CreatePlayer, BallyTech.Library.Workflow" />
+  <WorkItemConfig name="EditPlayer" type="BallyTech.Library.Workflow.Player.EditPlayer, BallyTech.Library.Workflow" />
+  <WorkItemConfig name="EnrollPlayer" type="BallyTech.Library.Workflow.Player.EnrollPlayer, BallyTech.Library.Workflow" />
+  <WorkItemConfig name="FindPlayerByPlayerId" type="BallyTech.Library.Workflow.Player.FindPlayerByPlayerId, BallyTech.Library.Workflow" />
+  <WorkItemConfig name="GetAllPlayers" type="BallyTech.Library.Workflow.Player.GetAllPlayers, BallyTech.Library.Workflow" />
+  <WorkItemConfig name="NewPlayerEnrollment" type="BallyTech.Library.Workflow.Player.NewPlayerEnrollment, BallyTech.Library.Workflow" />
+  <WorkItemConfig name="GetStatesByCountryId" type="BallyTech.Library.Workflow.Player.GetStatesByCountryId, BallyTech.Library.Workflow" />
+  <WorkItemConfig name="GetCitiesByStateId" type="BallyTech.Library.Workflow.Player.GetCitiesByStateId, BallyTech.Library.Workflow" />
+  <WorkItemConfig name="GetGenders" type="BallyTech.Library.Workflow.Player.GetGenders, BallyTech.Library.Workflow" />
+</WorkItemTypeConfiguration>

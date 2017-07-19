@@ -1,0 +1,80 @@
+<EventMessageConfigs>
+  <EventMessageConfig EventName="DEFAULT">
+    <Context>CreateNew</Context>
+    <Mode>Guaranteed</Mode>
+    <Priority>QueuedLow</Priority>
+  </EventMessageConfig>
+  <EventMessageConfig EventName="SDSDataPosting">
+    <Context>Existing</Context>
+    <Mode>Guaranteed</Mode>
+    <Priority>QueuedLow</Priority>
+  </EventMessageConfig>
+  <EventMessageConfig EventName="SlotMachineNotification">
+    <Context>CreateNew</Context>
+    <Mode>UnReliable</Mode>
+    <Priority>QueuedLow</Priority>
+  </EventMessageConfig>
+  <EventMessageConfig EventName="AssetRecoveryNotification">
+    <Context>CreateNew</Context>
+    <Mode>UnReliable</Mode>
+    <Priority>QueuedLow</Priority>
+  </EventMessageConfig>
+  <EventMessageConfig EventName="BTAsyncVoid">
+    <Context>CreateNew</Context>
+    <Mode>Guaranteed</Mode>
+    <Priority>QueuedHigh</Priority>
+  </EventMessageConfig>
+  <EventMessageConfig EventName="UploadObject">
+    <Context>CreateNew</Context>
+    <Mode>Guaranteed</Mode>
+    <Priority>QueuedHigh</Priority>
+  </EventMessageConfig>
+  <EventMessageConfig EventName="OfflinePlayerCreation">
+    <Context>CreateNew</Context>
+    <Mode>Guaranteed</Mode>
+    <Priority>QueuedHigh</Priority>
+  </EventMessageConfig>
+  <EventMessageConfig EventName="PlayerDoc">
+    <Context>CreateNew</Context>
+    <Mode>Guaranteed</Mode>
+    <Priority>QueuedHigh</Priority>
+  </EventMessageConfig>
+
+	<EventMessageConfig EventName="SiteConfigurationNotification">
+		<Context>CreateNew</Context>
+		<Mode>UnReliable</Mode>
+		<Priority>QueuedLow</Priority>
+	</EventMessageConfig>
+
+  <EventMessageConfig EventName="CoreProductAndMasterDataNotification">
+    <Context>CreateNew</Context>
+    <Mode>UnReliable</Mode>
+    <Priority>QueuedLow</Priority>
+  </EventMessageConfig>
+
+  <EventMessageConfig EventName="CoreProductSyncNotification">
+    <Context>CreateNew</Context>
+    <Mode>UnReliable</Mode>
+    <Priority>QueuedLow</Priority>
+  </EventMessageConfig>
+
+  <EventMessageConfig EventName="PhysicalDropNotification">
+    <Context>CreateNew</Context>
+    <Mode>UnReliable</Mode>
+    <Priority>QueuedLow</Priority>
+  </EventMessageConfig>
+  <EventMessageConfig EventName="LocalMOMObject">
+    <Context>Existing</Context>
+    <Mode>Guaranteed</Mode>
+    <Priority>QueuedLow</Priority>
+  </EventMessageConfig>
+  <EventMessageConfig EventName="ETLObject">
+    <Context>CreateNew</Context>
+    <Mode>Guaranteed</Mode>
+</EventMessageConfig>
+<EventMessageConfig EventName="UploadInventoryData">
+    <Context>Existing</Context>
+    <Mode>Guaranteed</Mode>
+    <Priority>QueuedLow</Priority>
+  </EventMessageConfig>
+</EventMessageConfigs>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<DataConfigurationSection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DataServiceElementCollection>
+    <DataProviderAdapterElement TypeName="BallyTech.Infrastructure.Data.DataProviderAdapter`2, BallyTech.Infrastructure.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL" Name="MSSql">
+      <CommandFactory TypeName="BallyTech.Infrastructure.Data.MSSql.CommandFactory, BallyTech.Infrastructure.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL" />
+      <DataProvider TypeName="BallyTech.Infrastructure.Data.MSSql.SqlDataProvider, BallyTech.Infrastructure.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL">
+        <Parameters />
+      </DataProvider>
+      <NodeCollection>
+        <DataServiceNodeElement ShardHash="1">
+          <Parameters>
+            <Parameter>
+              <Key>ConnectionString</Key>
+              <Value>Server=10.2.44.54;Trusted_Connection=False;User ID=sa;Password=abc@123;Initial Catalog=SiteController_Demo</Value>
+            </Parameter>
+            <Parameter>
+              <Key>CommandTimeOut</Key>
+              <Value>18000</Value>
+            </Parameter>
+            <Parameter>
+              <Key>ReadTimeOut</Key>
+              <Value>18000</Value>
+            </Parameter>
+          </Parameters>
+        </DataServiceNodeElement>
+      </NodeCollection>
+      <ObjectFactory TypeName="BallyTech.Infrastructure.Data.MSSql.ObjectFactory, BallyTech.Infrastructure.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL" />
+      <QueryFactory TypeName="BallyTech.Infrastructure.Data.MSSql.QueryFactory, BallyTech.Infrastructure.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL" />
+    </DataProviderAdapterElement>
+  </DataServiceElementCollection>
+</DataConfigurationSection>

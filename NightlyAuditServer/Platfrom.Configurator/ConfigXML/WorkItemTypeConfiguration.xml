@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<WorkItemTypeConfiguration>
+  <WorkItemConfig name="AuthenticateUser" type="NightlyAuditServer.Workflow.AuthenticateUser, NightlyAuditServer.Workflow" />
+  <WorkItemConfig name="GetAllProducts" type="NightlyAuditServer.Workflow.GetAllProducts, NightlyAuditServer.Workflow" />
+  <WorkItemConfig name="UpdateProduct" type="NightlyAuditServer.Workflow.UpdateProduct, NightlyAuditServer.Workflow" />
+  <WorkItemConfig name="GetAuditJob" type="NightlyAuditServer.Workflow.GetAuditJob, NightlyAuditServer.Workflow" />
+
+</WorkItemTypeConfiguration>

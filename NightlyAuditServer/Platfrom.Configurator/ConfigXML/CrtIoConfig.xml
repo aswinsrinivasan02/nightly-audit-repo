@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CrtHostConfiguration Ip="10.2.101.41">
+    <CrtHost Name="CRT_Client1" ListenPort="31000" SiteNumber="99"/>
+</CrtHostConfiguration>

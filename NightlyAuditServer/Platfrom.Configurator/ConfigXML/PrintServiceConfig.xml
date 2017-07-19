@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<PrintServiceConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ChannelConfig>
+    <PrintManagerChannelConfig Key="DEFAULT">
+      <!-- Print Manager Service URL -->
+      <Address>net.tcp://localhost:9992/Bally.SiteController.PrintManager/PrintManager</Address>
+      <Binding>NET.TCP</Binding>
+    </PrintManagerChannelConfig>
+  </ChannelConfig>
+  <!--Print Manager Call back URL Listener Port-->
+  <ListenUri>net.tcp://localhost:9994/PrintManagerCallback</ListenUri>
+  <PrinterConfig>
+    <PrintManagerConfig Key="DEFAULT">
+      <PrintManagerType>BallyCentralPrintManager</PrintManagerType>
+    </PrintManagerConfig>
+  </PrinterConfig>
+</PrintServiceConfig>

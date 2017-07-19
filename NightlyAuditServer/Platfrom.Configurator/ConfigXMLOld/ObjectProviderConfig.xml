@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<ObjectProviderConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ObjectProviderCollection>
+    <ObjectProvider>
+      <TypeName>BallyTech.Library.Domain.Player.Player, BallyTech.Library.Domain</TypeName>
+      <ObjectProviderTypeName>BallyTech.Library.Persistence.MSSql.PlayerConvertable, BallyTech.Library.Persistence.MSSql</ObjectProviderTypeName>
+    </ObjectProvider>
+
+    <ObjectProvider>
+      <TypeName>BallyTech.Infrastructure.IDGeneration.IDRange, BallyTech.Infrastructure.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL</TypeName>
+      <ObjectProviderTypeName>BallyTech.Infrastructure.IDGeneration.IDRange, BallyTech.Infrastructure.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL</ObjectProviderTypeName>
+    </ObjectProvider>
+
+    <ObjectProvider>
+      <TypeName>BallyTech.Library.Domain.Player.Membership, BallyTech.Library.Domain</TypeName>
+      <ObjectProviderTypeName>BallyTech.Library.Persistence.MSSql.MembershipConvertable, BallyTech.Library.Persistence.MSSql</ObjectProviderTypeName>
+    </ObjectProvider>
+
+  </ObjectProviderCollection>
+</ObjectProviderConfig>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ServerHostConfig>
+  <EndPoint ConfigName="applicationHelperEndPoint">
+    <HostConfig bindingName="TCPBindingConfiguration" bindingType="NetTcp" relativePath="ApplicationHelper"></HostConfig>
+  </EndPoint>
+</ServerHostConfig>

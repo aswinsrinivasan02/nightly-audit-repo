@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<QueryBuilderConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <QueryBuilderCollection>
+    <QueryBuilder>
+      <TypeName>BallyTech.Library.Domain.Player.Player, BallyTech.Library.Domain</TypeName>
+      <QueryBuilderTypeName>BallyTech.Library.Persistence.MSSql.PlayerQueryBuilder, BallyTech.Library.Persistence.MSSql</QueryBuilderTypeName>
+    </QueryBuilder>
+
+    <QueryBuilder>
+      <TypeName>BallyTech.Infrastructure.IDGeneration.IDRange, BallyTech.Infrastructure.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL</TypeName>
+      <QueryBuilderTypeName>BallyTech.Library.Persistence.MSSql.IDRangeQueryBuilder, BallyTech.Library.Persistence.MSSql</QueryBuilderTypeName>
+    </QueryBuilder>
+
+    <QueryBuilder>
+      <TypeName>BallyTech.Library.Domain.Player.Country, BallyTech.Library.Domain</TypeName>
+      <QueryBuilderTypeName>BallyTech.Library.Persistence.MSSql.CountryQueryBuilder, BallyTech.Library.Persistence.MSSql</QueryBuilderTypeName>
+    </QueryBuilder>
+
+    <QueryBuilder>
+      <TypeName>BallyTech.Library.Domain.Player.TerritorialState, BallyTech.Library.Domain</TypeName>
+      <QueryBuilderTypeName>BallyTech.Library.Persistence.MSSql.StateQueryBuilder, BallyTech.Library.Persistence.MSSql</QueryBuilderTypeName>
+    </QueryBuilder>
+
+    <QueryBuilder>
+      <TypeName>BallyTech.Library.Domain.Player.City, BallyTech.Library.Domain</TypeName>
+      <QueryBuilderTypeName>BallyTech.Library.Persistence.MSSql.CityQueryBuilder, BallyTech.Library.Persistence.MSSql</QueryBuilderTypeName>
+    </QueryBuilder>
+
+    <QueryBuilder>
+      <TypeName>BallyTech.Library.Domain.Player.PostalCode, BallyTech.Library.Domain</TypeName>
+      <QueryBuilderTypeName>BallyTech.Library.Persistence.MSSql.PostalCodeQueryBuilder, BallyTech.Library.Persistence.MSSql</QueryBuilderTypeName>
+    </QueryBuilder>
+
+    <QueryBuilder>
+      <TypeName>BallyTech.Library.Domain.Player.IdentificationType, BallyTech.Library.Domain</TypeName>
+      <QueryBuilderTypeName>BallyTech.Library.Persistence.MSSql.IdentTypeQueryBuilder, BallyTech.Library.Persistence.MSSql</QueryBuilderTypeName>
+    </QueryBuilder>
+    
+    <QueryBuilder>
+      <TypeName>BallyTech.Library.Domain.Player.PlayerAttributeDuplication, BallyTech.Library.Domain</TypeName>
+      <QueryBuilderTypeName>BallyTech.Library.Persistence.MSSql.PlayerDuplicatesQueryBuilder, BallyTech.Library.Persistence.MSSql</QueryBuilderTypeName>
+    </QueryBuilder>
+    
+  </QueryBuilderCollection>
+</QueryBuilderConfig>

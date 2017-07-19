@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<CommandBuilderConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CommandBuilderCollection>
+    <CommandBuilder>
+      <TypeName>BallyTech.Library.Persistence.MSSql.Entity.Player, BallyTech.Library.Persistence.MSSql</TypeName>
+      <CommandBuilderTypeName>BallyTech.Library.Persistence.MSSql.PlayerCommandBuilder, BallyTech.Library.Persistence.MSSql</CommandBuilderTypeName>
+    </CommandBuilder>
+    <CommandBuilder>
+      <TypeName>BallyTech.Library.Persistence.MSSql.Entity.PlayerAddress, BallyTech.Library.Persistence.MSSql</TypeName>
+      <CommandBuilderTypeName>BallyTech.Library.Persistence.MSSql.PlayerAddressCommandBuilder, BallyTech.Library.Persistence.MSSql</CommandBuilderTypeName>
+    </CommandBuilder>
+    <CommandBuilder>
+      <TypeName>BallyTech.Library.Persistence.MSSql.Entity.PlayerEmail, BallyTech.Library.Persistence.MSSql</TypeName>
+      <CommandBuilderTypeName>BallyTech.Library.Persistence.MSSql.PlayerEmailCommandBuilder, BallyTech.Library.Persistence.MSSql</CommandBuilderTypeName>
+    </CommandBuilder>
+    <CommandBuilder>
+      <TypeName>BallyTech.Library.Persistence.MSSql.Entity.PlayerIdentity, BallyTech.Library.Persistence.MSSql</TypeName>
+      <CommandBuilderTypeName>BallyTech.Library.Persistence.MSSql.PlayerIdentityCommandBuilder, BallyTech.Library.Persistence.MSSql</CommandBuilderTypeName>
+    </CommandBuilder>
+    <CommandBuilder>
+      <TypeName>BallyTech.Library.Persistence.MSSql.Entity.PlayerPhone, BallyTech.Library.Persistence.MSSql</TypeName>
+      <CommandBuilderTypeName>BallyTech.Library.Persistence.MSSql.PlayerPhoneCommandBuilder, BallyTech.Library.Persistence.MSSql</CommandBuilderTypeName>
+    </CommandBuilder>
+    <CommandBuilder>
+      <TypeName>BallyTech.Library.Persistence.MSSql.Entity.Membership, BallyTech.Library.Persistence.MSSql</TypeName>
+      <CommandBuilderTypeName>BallyTech.Library.Persistence.MSSql.MembershipCommandBuilder, BallyTech.Library.Persistence.MSSql</CommandBuilderTypeName>
+    </CommandBuilder>
+  </CommandBuilderCollection>
+</CommandBuilderConfig>

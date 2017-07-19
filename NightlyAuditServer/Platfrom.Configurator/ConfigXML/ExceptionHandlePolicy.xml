@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Policies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="exceptionhandlePolicy1">
+  <ExceptionHandlePolicy name="Default">
+    <ExceptionHandlerConfig type="ExceptionHandling.ModuleExceptionHandler, ExceptionHandling" handlerAction="Throw" exceptionType="BallyTech.Infrastructure.Types.ModuleException, BallyTech.Infrastructure.Utilities, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL" invokeSequence = "1" />
+    <ExceptionHandlerConfig type="ExceptionHandling.OptimisticLockViolationHandler, ExceptionHandling" handlerAction="InvokeOnFailure" invokeSequence="2" exceptionType="System.Data.SqlClient.SqlException, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <ExceptionHandlerConfig type="ExceptionHandling.PrimaryKeyViolationHandler, ExceptionHandling" handlerAction="Rethrow" invokeSequence="1" exceptionType="System.Data.SqlClient.SqlException, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <ExceptionHandlerConfig type="ExceptionHandling.EndpointNotFoundExceptionHandler, ExceptionHandling" handlerAction="Rethrow" exceptionType="System.ServiceModel.EndpointNotFoundException, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <ExceptionHandlerConfig type="ExceptionHandling.FaultExceptionHandler, ExceptionHandling" handlerAction="Rethrow" exceptionType="System.ServiceModel.FaultException, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  </ExceptionHandlePolicy>
+
+  <ExceptionHandlePolicy name="Service.Data">
+    <ExceptionHandlerConfig type="ExceptionHandling.FaultExceptionHandler, ExceptionHandling" handlerAction="Rethrow" exceptionType="System.ServiceModel.FaultException, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <ExceptionHandlerConfig type="ExceptionHandling.EndpointNotFoundExceptionHandler, ExceptionHandling" handlerAction="Rethrow" exceptionType="System.ServiceModel.EndpointNotFoundException, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <ExceptionHandlerConfig type="ExceptionHandling.DataExceptionHandlerIdentifier, ExceptionHandling" handlerAction="Convert" exceptionType="System.Exception" />
+    <ExceptionHandlerConfig type="ExceptionHandling.ModuleExceptionHandler, ExceptionHandling" handlerAction="Throw" exceptionType="BallyTech.Infrastructure.Types.ModuleException, BallyTech.Infrastructure.Utilities, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL" />
+    <ExceptionConvertorConfig type="ExceptionHandling.DataExceptionConvertor, ExceptionHandling"  exceptionType="System.Exception" />
+  </ExceptionHandlePolicy>
+
+
+</Policies>

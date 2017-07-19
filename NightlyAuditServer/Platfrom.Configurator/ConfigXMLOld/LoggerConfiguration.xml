@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<LoggerConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Logger>
+    <Type>BallyTech.Infrastructure.Logging.FileLogging, BallyTech.Infrastructure.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL</Type>
+    <Add>
+      <Key>format</Key>
+      <Value>[dd]_[MM]_[yyyy]_[HH]</Value>
+    </Add>
+    <Add>
+      <Key>filesize</Key>
+      <Value>100</Value>
+    </Add>
+    <Add>
+      <Key>logLevel</Key>
+      <Value>31</Value>
+    </Add>
+    <Add>
+      <Key>data</Key>
+      <Value>[Source] [ManagedThreadId] [Timestamp] [LogType] [Message]</Value>
+    </Add>
+    <Add>
+      <Key>componentPositionInFileName</Key>
+      <Value>2</Value>
+    </Add>
+    <Add>
+      <Key>directoryRequiredPerComponent</Key>
+      <Value>true</Value>
+    </Add>
+    <Add>
+      <Key>fileExtension</Key>
+      <Value>txt</Value>
+    </Add>
+    <LogLevelCollection>
+      <LogLevelConfig name="CreatePlayer" logLevel="DebugLevel"></LogLevelConfig>
+    </LogLevelCollection>
+  </Logger>
+  <Formatter>
+    <DefaultType>BallyTech.Infrastructure.Logging.TypeFormatter, BallyTech.Infrastructure.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL</DefaultType>
+    <DefaultField>BallyTech.Infrastructure.Logging.FieldFormatter, BallyTech.Infrastructure.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL</DefaultField>
+    <Types>
+      <Key>System.Exception</Key>
+      <Value>BallyTech.Infrastructure.Logging.TypeFormatter, BallyTech.Infrastructure.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL</Value>
+    </Types>
+    <Fields>
+      <Key>LastName</Key>
+      <Value>BallyTech.Infrastructure.Logging.FieldFormatter, BallyTech.Infrastructure.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL</Value>
+    </Fields>
+  </Formatter>
+</LoggerConfiguration>

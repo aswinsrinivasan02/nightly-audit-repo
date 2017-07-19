@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TypeShardConfigurationSection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeShardElement TypeName="Player" ShardHashProviderTypeName="BallyTech.Library.Utilities.ShardHashProvider, BallyTech.Library.Utilities" />
+  <TypeShardElement TypeName="IDRange" ShardHashProviderTypeName="BallyTech.Library.Utilities.ShardHashProvider, BallyTech.Library.Utilities" />
+  <TypeShardElement TypeName="Country" ShardHashProviderTypeName="BallyTech.Library.Utilities.ShardHashProvider, BallyTech.Library.Utilities" />
+  <TypeShardElement TypeName="TerritorialState" ShardHashProviderTypeName="BallyTech.Library.Utilities.ShardHashProvider, BallyTech.Library.Utilities" />
+  <TypeShardElement TypeName="City" ShardHashProviderTypeName="BallyTech.Library.Utilities.ShardHashProvider, BallyTech.Library.Utilities" />
+  <TypeShardElement TypeName="PostalCode" ShardHashProviderTypeName="BallyTech.Library.Utilities.ShardHashProvider, BallyTech.Library.Utilities" />
+  <TypeShardElement TypeName="Membership" ShardHashProviderTypeName="BallyTech.Library.Utilities.ShardHashProvider, BallyTech.Library.Utilities" />
+  <TypeShardElement TypeName="IdentificationType" ShardHashProviderTypeName="BallyTech.Library.Utilities.ShardHashProvider, BallyTech.Library.Utilities" />
+  <TypeShardElement TypeName="PlayerAttributeDuplication" ShardHashProviderTypeName="BallyTech.Library.Utilities.ShardHashProvider, BallyTech.Library.Utilities" />
+</TypeShardConfigurationSection>

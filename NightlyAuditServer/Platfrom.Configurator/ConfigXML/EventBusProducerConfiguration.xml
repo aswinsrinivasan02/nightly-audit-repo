@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<EventBusProducerConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" GlobalPartitionResolverType="" 
+                               GlobalStatusNotifierType="Platform.API.Test.GlobalStatusNotifier, Platform.API.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" >
+
+  <Producer Topic="AssetCountResponse" SendChannel="Immediate" ProviderKey="KafkaMessagingEventBusProvider" PartitionCount="1"
+           StatusNotifierType="BallyTech.Library.Messaging.Services.EventBus.AssetCountNotificationStatusNotifier, BallyTech.Library.Messaging.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" RetryCount="2" RetryIntervalInMs="200" />
+      
+  <!--Default Retry count is 3 and Default Interval in Milli seconds is 100. 
+      To change these configurations, add RetryCount and RetryIntervalInMs attributes with desired values for the desired topics -->
+</EventBusProducerConfiguration>

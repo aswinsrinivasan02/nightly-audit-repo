@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<EventBusSystemConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Configuration Key="CloseTimeoutInMs" Value="600000" />
+  <Configuration Key="CoordinatorDetails" Value="10.2.200.115:8687" />
+  <Configuration Key="CoordinatorRebalanceOptimized" Value="True" />
+  <Configuration Key="HighPriorityPoolSize" Value="10" />
+  <Configuration Key="ImmediateRetryCount" Value="3" />
+  <Configuration Key="ImmediateRetryIntervalInMs" Value="100" />
+  <Configuration Key="LoadBalancerRebalanceMode" Value="StartedAt" />
+  <Configuration Key="LoadBalancerSupport" Value="False" />
+  <Configuration Key="LowPriorityPoolSize" Value="10" />
+  <Configuration Key="MaxQueueSize" Value="100" />
+  <Configuration Key="MessageCompression" Value="False" />
+  <Configuration Key="MessageEncryption" Value="False" />
+  <Configuration Key="MessageIdGeneration" Value="True" />
+  <Configuration Key="MessagingPoolSize" Value="100" />
+  <Configuration Key="MulticastAddress" Value="239.192.10.11" />
+  <Configuration Key="MulticastHeartBeatIntervalInMs" Value="5000" />
+  <Configuration Key="MulticastPortNo" Value="8688" />
+  <Configuration Key="MulticastProcUtilIntervalInMs" Value="0" />
+  <Configuration Key="MulticastSupport" Value="False" />
+  <Configuration Key="NumberGeneratorKey" Value="EventBusMessageID" />
+  <Configuration Key="OpenTimeoutInMs" Value="600000" />
+  <Configuration Key="QueuedRetryCount" Value="3" />
+  <Configuration Key="QueuedRetryIntervalInMs" Value="100" />
+  <Configuration Key="ReceiveTimeoutInMs" Value="600000" />
+  <Configuration Key="SendTimeoutInMs" Value="600000" />
+  <Configuration Key="ServerHostingHttpPortNo" Value="0" />
+  <Configuration Key="ServerHostingNonCLRSupport" Value="True" />
+  <Configuration Key="ServerHostingRESTSupport" Value="False" />
+  <Configuration Key="ServerHostingTcpPortNo" Value="0" />
+  <Configuration Key="ServerWeightage" Value="0" />
+  <Configuration Key="TransactionTimeoutInMs" Value="600000" />
+
+  <!--To Log the messsage for Failed consumer messages, set LogReceivedFailedConsumerMessages to True, else False-->
+  <Configuration Key="LogReceivedFailedConsumerMessages" Value="True"/>
+  <!--To Log the messsage for Filtered messages, set LogReceivedFailedFilteredMessage to True, else False-->
+  <Configuration Key="LogReceivedFailedFilteredMessage" Value="True"/>
+</EventBusSystemConfiguration>

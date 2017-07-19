@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<ObjectBuilderConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ObjectBuilderCollection>
+    <ObjectBuilder>
+      <TypeName>BallyTech.Library.Domain.Player.Player, BallyTech.Library.Domain</TypeName>
+      <ObjectBuilderTypeName>BallyTech.Library.Persistence.MSSql.PlayerObjectBuilder, BallyTech.Library.Persistence.MSSql</ObjectBuilderTypeName>
+    </ObjectBuilder>
+    <ObjectBuilder>
+      <TypeName>BallyTech.Infrastructure.IDGeneration.IDRange, BallyTech.Infrastructure.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL</TypeName>
+      <ObjectBuilderTypeName>BallyTech.Library.Persistence.MSSql.IDRangeObjectBuilder, BallyTech.Library.Persistence.MSSql</ObjectBuilderTypeName>
+    </ObjectBuilder>
+    <ObjectBuilder>
+      <TypeName>BallyTech.Library.Domain.Player.Country, BallyTech.Library.Domain</TypeName>
+      <ObjectBuilderTypeName>BallyTech.Library.Persistence.MSSql.CountryObjectBuilder, BallyTech.Library.Persistence.MSSql</ObjectBuilderTypeName>
+    </ObjectBuilder>
+    <ObjectBuilder>
+      <TypeName>BallyTech.Library.Domain.Player.TerritorialState, BallyTech.Library.Domain</TypeName>
+      <ObjectBuilderTypeName>BallyTech.Library.Persistence.MSSql.StateObjectBuilder, BallyTech.Library.Persistence.MSSql</ObjectBuilderTypeName>
+    </ObjectBuilder>
+    <ObjectBuilder>
+      <TypeName>BallyTech.Library.Domain.Player.City, BallyTech.Library.Domain</TypeName>
+      <ObjectBuilderTypeName>BallyTech.Library.Persistence.MSSql.CityObjectBuilder, BallyTech.Library.Persistence.MSSql</ObjectBuilderTypeName>
+    </ObjectBuilder>
+    <ObjectBuilder>
+      <TypeName>BallyTech.Library.Domain.Player.PostalCode, BallyTech.Library.Domain</TypeName>
+      <ObjectBuilderTypeName>BallyTech.Library.Persistence.MSSql.PostalCodeObjectBuilder, BallyTech.Library.Persistence.MSSql</ObjectBuilderTypeName>
+    </ObjectBuilder>
+    <ObjectBuilder>
+      <TypeName>BallyTech.Library.Domain.Player.IdentificationType, BallyTech.Library.Domain</TypeName>
+      <ObjectBuilderTypeName>BallyTech.Library.Persistence.MSSql.IdentTypeObjectBuilder, BallyTech.Library.Persistence.MSSql</ObjectBuilderTypeName>
+    </ObjectBuilder>
+    <ObjectBuilder>
+      <TypeName>BallyTech.Library.Domain.Player.PlayerAttributeDuplication, BallyTech.Library.Domain</TypeName>
+      <ObjectBuilderTypeName>BallyTech.Library.Persistence.MSSql.PlayerDuplicatesObjectBuilder, BallyTech.Library.Persistence.MSSql</ObjectBuilderTypeName>
+    </ObjectBuilder>
+  </ObjectBuilderCollection>
+</ObjectBuilderConfig>

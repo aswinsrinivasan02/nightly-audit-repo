@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<EventBusConsumerConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                               GlobalEventProcessorType="BallyTech.Library.Messaging.EventBus.ExecutedAssetsDataEventProcessor, BallyTech.Library.Messaging.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                               GlobalFailureStatusNotifierType="BallyTech.Library.Messaging.EventBus.ExecutedAssetsDataEventProcessor, BallyTech.Library.Messaging.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" >
+  
+  <Consumer Topic="AssetCountRequest" Filters="*" ProviderKey="KafkaMessagingEventBusProvider" PartitionCount="1" EventProcessorType="BallyTech.Library.Messaging.Services.EventBus.AssetReqEventProcessor, BallyTech.Library.Messaging.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  RetryCount="2" RetryIntervalInMs="200" />
+
+  <!--Default Retry count is 3 and Default Interval in Milli seconds is 100. 
+      To change these configurations, add RetryCount and RetryIntervalInMs attributes with desired values for the desired topics -->
+</EventBusConsumerConfiguration>

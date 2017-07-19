@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<EventBusProviderConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EventBusProvider Name="KafkaMessagingEventBusProvider" Type="Kafka">
+    <Parameters>
+      <Parameter Key="CommitOffsetAsync" Value="False" />
+      <Parameter Key="CommitOffsetThreads" Value="5" />
+      <Parameter Key="ConnectionString" Value="http://WS-IN925:9092" />
+      <Parameter Key="ConsumeMessagesAsync" Value="False" />
+      <Parameter Key="ConsumerConnectionWaitTimeoutInMs" Value="5000" />
+      <Parameter Key="ConsumerThreads" Value="5" />
+      <Parameter Key="ConsumerWaitTimeoutInMs" Value="100" />
+      <Parameter Key="MaximumAsyncRequests" Value="20" />
+      <Parameter Key="MaximumMessageBuffer" Value="1000" />
+      <Parameter Key="ProducerBatchDelayTimeInMs" Value="100" />
+      <Parameter Key="ProducerBatchSize" Value="1" />
+      <Parameter Key="ProducerPoolSize" Value="5" />
+      <Parameter Key="ProducerWaitTimeoutInMs" Value="5000" />
+    </Parameters>
+  </EventBusProvider>
+</EventBusProviderConfiguration>
