@@ -178,10 +178,6 @@
       <Project>{fefb761a-21d0-40ac-9a26-c05d75c983a9}</Project>
       <Name>Persistance</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PlatformService\PlatformServices.csproj">
-      <Project>{bf5ee2cc-875f-4708-994e-e156b59da200}</Project>
-      <Name>PlatformServices</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{134d35cc-16f7-4191-ab15-f778241ab5c2}</Project>
       <Name>Utilities</Name>
