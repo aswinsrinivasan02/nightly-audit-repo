@@ -1,0 +1,53 @@
+﻿.tile-square {
+    width: 150px;
+    height: 150px;
+    display: block;
+    float: left;
+    margin: 5px;
+    background-color: #eeeeee;
+    box-shadow: inset 0 0 1px #FFFFCC;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: visible;
+}
+
+.bg-orange {
+    background-color: #FD9452 !important;
+}
+.bg-anchortheme {
+    background-color: #97d1d1 !important;
+}
+
+.tile-rectangle {
+    width: 358px;
+    height: 150px;
+    display: block;
+    float: left;
+    margin: 5px;
+    background-color: inherit;
+    box-shadow: inset 0 0 1px #FFFFCC;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: visible;
+}
+
+.dashed-add {
+    border: 1px dashed black;
+    background: url('../Images/Add.png') no-repeat center center;
+    background-size:60px;
+}
+.right-border
+{
+     border-right: 1px solid #97d1d1;
+}
+

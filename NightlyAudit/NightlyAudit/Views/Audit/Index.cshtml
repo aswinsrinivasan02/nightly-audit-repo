@@ -1,0 +1,20 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div>
+    <div class="align-inline ">
+        <div >
+            <label>Audit Type</label>
+        </div>
+        <div class="dropdown-content">
+            <select ng-model="selectAuditType" ng-change="loadDynamicControls()">
+                <option value="">-- Select AuditType --</option>
+                <option ng-repeat="auditType in auditTypes"  value="{{auditType.AuditId}}">{{auditType.AuditName}}</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+

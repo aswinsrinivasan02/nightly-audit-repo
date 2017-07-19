@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @System.Web.Optimization.Styles.Render("~/Content/css")
+    @System.Web.Optimization.Styles.Render("~/Content/metro")
+    @System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")
+    @System.Web.Optimization.Scripts.Render("~/Scripts/Angular")
+    @System.Web.Optimization.Scripts.Render("~/Scripts/Layout")
+    @System.Web.Optimization.Scripts.Render("~/Scripts/AuditLayout")
+</head>
+<body id="body" data-ng-app="LayoutModule">
+    <div id="layOutDiv" ng-controller="LayoutController">
+        @*<nav class="nav" data-ng-mouseleave="toggleMenuOut()">*@
+        <div class="page-header">
+            <img id="headLogo" src="~/Content/Images/head_logo.png" />
+            <img id="userLogin" src="~/Content/Images/UserLogin2.png" />
+        </div>
+        <nav id="nav" class="audit-nav" data-ng-mouseleave="toggleMenuOut()">
+
+            <div id="mySidenav" class="sidenav">
+                <div>
+                    <a href="#" class="big "><span>Dashboard</span></a>
+                </div>
+                <div class="list parent">
+                    <a href="#" class="big"><span>Audit</span></a>
+                    <div>
+                        <ul class="hidden-list">
+                            <li><a href="#!/NewAudit" class="underline"><span>New Audit Job</span></a></li>
+                            <li><a href="#" class="underline"><span>View AuditJobs</span></a></li>
+                            <li><a href="#" class="underline"><span>View History</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="list parent">
+                    <a href="#" class="big"><span>Settings</span></a>
+                    <ul class="hidden-list">
+                        <li><a href="#!/ProductSetting" class="underline"><span>Product Setting</span></a></li>
+                        <li><a href="#" class="underline"><span>Other Settings</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div data-ng-mouseover="toggleIn()" id="btn_rollover" class="btn_rollover">
+                <a data-ng-click="openNav()" href="#" class="btn_rollover"><span id="rollOver">Rollover</span></a>
+            </div>
+        </nav>
+
+        <div id="partialView" ng-view>
+            @RenderBody()
+        </div>
+
+    </div>
+</body>
+</html>
+<script src="~/Scripts/angular-sanitize.js"></script>
+<script src="~/Scripts/angular-route.js"></script>
+<script src="~/Scripts/ngDialog.js"></script>

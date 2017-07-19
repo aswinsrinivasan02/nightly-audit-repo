@@ -1,0 +1,59 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+
+</head>
+<body>
+    <div>
+        <div class="container">
+            <div class="card card-container">
+              
+                <img id="profile-img" class="profile-img-card" src="~/Content/Images/SG.png"  />
+                <p id="profile-name" class="profile-name-card"></p>
+                <form class="form-signin">
+                    <span id="reauth-email" class="reauth-email"></span>
+                    <input type="text" id="inputUserName" class="form-control" placeholder="User Name" required autofocus>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <button id="btnLogin" class="btn btn-lg btn-primary btn-block btn-signin" type="button">Sign in</button>
+                </form>
+                <a href="#" class="forgot-password">
+                    Forgot the password?
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<link href="~/Content/Audit/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/Audit/Login.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#btnLogin').click(function () {
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "Login/Validate",
+                data: "{'userName':'" + $('#inputUserName').val() + "', 'password':'" + $('#inputPassword').val() + "'}",
+                success: function (result) {
+                    debugger;
+                    window.location.href = result.redirecturl;
+                }
+            });
+
+        });
+    });
+  
+</script>
