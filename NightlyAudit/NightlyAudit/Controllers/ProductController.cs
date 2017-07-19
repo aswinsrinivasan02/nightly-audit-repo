@@ -15,18 +15,17 @@ namespace Audit.Controllers
         }
 
         [HttpPost]
-        public ActionResult SaveProductConfiguration()
+        public ActionResult SaveProductConfiguration(ProductDTO productDTO)
         {
-            
-            return View();
+            bool isProductSaved = PlatformAPIProxy.Asset.UpdateProduct(productDTO);
+            return Json(new { isProductSaved = isProductSaved }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
         public ActionResult GetAllConfiguredProducts()
         {
-
-            List<ProductDTO> configuredProducts=PlatformAPIProxy.Asset.GetAllProducts();
-            return Json(new { productList= configuredProducts },JsonRequestBehavior.AllowGet);
+            List<ProductDTO> configuredProducts = PlatformAPIProxy.Asset.GetAllProducts();
+            return Json(new { productList = configuredProducts }, JsonRequestBehavior.AllowGet);
         }
 
 

@@ -1,6 +1,6 @@
 ﻿app.controller('AuditController', ['$scope', '$sce', 'AuditService', '$filter', function ($scope, $sce, AuditService, $filter) {
 
-    getAuditTypes();
+    //getAuditTypes();
 
 
     function getAuditTypes() {

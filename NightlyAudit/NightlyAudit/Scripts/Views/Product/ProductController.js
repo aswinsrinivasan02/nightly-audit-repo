@@ -1,26 +1,52 @@
 ﻿app.controller('ProductController', ['$scope', '$sce', 'ProductService', '$filter', 'ngDialog', function ($scope, $sce, ProductService, $filter, ngDialog) {
 
     $scope.productsConfigured = [];
+    $scope.productsConfiguredFiltered = [];
     loadAllConfiguredProducts();
 
     function loadAllConfiguredProducts() {
 
         var products = ProductService.loadAllConfiguredProducts();
         products.then(function (result) {
-            debugger;
-            $scope.productsConfigured = result.productList;
+
+            $scope.productsConfigured = result.data.productList;
+
+            if ($scope.selectedProduct != null) {
+                $scope.productsConfiguredFiltered = $.grep($scope.productsConfigured, function (e) { return e.ProductType == $scope.selectedProduct.ProductId });
+            }
+            else {
+
+                $scope.productsConfiguredFiltered = $scope.productsConfigured;
+            }
+
         });
     }
-    
-    $scope.selectedProduct = "--Choose Product--"
-    $scope.products = ['CMP', 'Cage'];
+
+    $scope.selectedProductName = "All";
+    $scope.products = [{ ProductId: 1, Name: "CMP" },
+                         { ProductId: 2, Name: "CAGE" }];
 
     $scope.hideAdd = true;
     $scope.showProductTypes = function (product) {
-        if (product != "" && product != "--Choose Product--") {
+
+        if (product != null) {
+
+            if (product != "All") {
+                $scope.productsConfiguredFiltered = $.grep($scope.productsConfigured, function (e) { return e.ProductType == product.ProductId });
+                $scope.hideAdd = false;
+                $scope.selectedProductName = product.Name;
+
+            }
+            else {
+                $scope.selectedProductName = "All"
+                $scope.productsConfiguredFiltered = $scope.productsConfigured;
+                $scope.hideAdd = true;
+            }
+
             $scope.selectedProduct = product;
-            $scope.hideAdd = false;
+
         }
+
     };
 
 
@@ -29,10 +55,10 @@
         $scope.selectedProductForEdit = {};
         var selectedConfig;
         if (product != null) {
-            selectedConfig = $scope.productsConfigured.map(function (img) { return img.ipNumber; }).indexOf(product.ipNumber);
+            selectedConfig = $scope.productsConfigured.map(function (img) { return img.ProductId; }).indexOf(product.ProductId);
             $scope.selectedProductForEdit = {
-                server_Name: product.serverName,
-                ip_Number: product.ipNumber
+                ProductCode: product.ProductCode,
+                IPInfo: product.IPInfo
             };
         }
 
@@ -50,11 +76,39 @@
 
                  if (product != null && value != "$closeButton") {
 
-                     $scope.productsConfigured[selectedConfig].serverName = value.server_Name
-                     $scope.productsConfigured[selectedConfig].ipNumber = value.ip_Number
+                     var productDTO = {
+
+                         ProductId: product.ProductId,
+                         IPInfo: value.IPInfo,
+                         ProductCode: value.ProductCode,
+                         ProductType: $scope.selectedProduct.ProductId,
+                         IsDelete: product.IsDelete
+                     };
+                     var isProductsaved = ProductService.saveProductConfiguration(productDTO);
+                     isProductsaved.then(function (result) {
+
+                         if (result.data.isProductSaved) {
+                             loadAllConfiguredProducts();
+                         }
+                     });
                  }
                  else if (value != null && value != "$closeButton") {
-                     $scope.productsConfigured.push({ id: 1, serverName: value.server_Name, ipNumber: value.ip_Number });
+
+                     var productDTO = {
+
+                         ProductId: 0,
+                         IPInfo: value.IPInfo,
+                         ProductCode: value.ProductCode,
+                         ProductType: $scope.selectedProduct.ProductId,
+                         IsDelete: false
+                     };
+                     var isProductsaved = ProductService.saveProductConfiguration(productDTO);
+                     isProductsaved.then(function (result) {
+
+                         if (result.data.isProductSaved) {
+                             loadAllConfiguredProducts();
+                         }
+                     });
                  }
 
              }
@@ -67,13 +121,14 @@
 
 app.service("ProductService", function ($http) {
 
-    this.saveProductConfiguration = function () {
-
-        return $http.post("Product/SaveProductConfiguration");
-    }
 
     this.loadAllConfiguredProducts = function () {
 
         return $http.get("Product/GetAllConfiguredProducts");
+    }
+
+    this.saveProductConfiguration = function (productDTO) {
+
+        return $http.post("Product/SaveProductConfiguration", productDTO);
     }
 });
