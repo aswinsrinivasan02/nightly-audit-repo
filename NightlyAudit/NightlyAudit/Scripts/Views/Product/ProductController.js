@@ -66,21 +66,25 @@
             template: 'productConfiguration.html',
             controller: 'ProductController',
             scope: $scope,
-            data: $scope.selectedProductForEdit,
+            data:
+                {
+                    configuredProduct: $scope.selectedProductForEdit,
+                    hideAdd: $scope.hideAdd,
+                }
 
         }).then(
              function (value) {
 
              },
              function (value) {
-
+              
                  if (value != "$closeButton") {
 
                      var productDTO = {
 
                          ProductId: product != null ? product.ProductId : 0,
-                         IPInfo: value.IPInfo,
-                         ProductCode: value.ProductCode,
+                         IPInfo: value.configuredProduct.IPInfo,
+                         ProductCode: value.configuredProduct.ProductCode,
                          ProductType: $scope.selectedProduct.ProductId,
                          IsDelete: product != null ? product.IsDelete : false
                      };
