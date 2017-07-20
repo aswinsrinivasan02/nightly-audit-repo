@@ -223,3 +223,9 @@ nav .btn_rollover {
     margin-top: 50px;
 }
 
+
+.loader-please-wait {
+    vertical-align: middle;
+    margin-right: 12px;
+    font-weight: normal !important;
+}

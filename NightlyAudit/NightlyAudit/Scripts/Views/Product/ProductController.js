@@ -74,33 +74,15 @@
              },
              function (value) {
 
-                 if (product != null && value != "$closeButton") {
+                 if (value != "$closeButton") {
 
                      var productDTO = {
 
-                         ProductId: product.ProductId,
+                         ProductId: product != null ? product.ProductId : 0,
                          IPInfo: value.IPInfo,
                          ProductCode: value.ProductCode,
                          ProductType: $scope.selectedProduct.ProductId,
-                         IsDelete: product.IsDelete
-                     };
-                     var isProductsaved = ProductService.saveProductConfiguration(productDTO);
-                     isProductsaved.then(function (result) {
-
-                         if (result.data.isProductSaved) {
-                             loadAllConfiguredProducts();
-                         }
-                     });
-                 }
-                 else if (value != null && value != "$closeButton") {
-
-                     var productDTO = {
-
-                         ProductId: 0,
-                         IPInfo: value.IPInfo,
-                         ProductCode: value.ProductCode,
-                         ProductType: $scope.selectedProduct.ProductId,
-                         IsDelete: false
+                         IsDelete: product != null ? product.IsDelete : false
                      };
                      var isProductsaved = ProductService.saveProductConfiguration(productDTO);
                      isProductsaved.then(function (result) {
@@ -121,14 +103,15 @@
 
 app.service("ProductService", function ($http) {
 
-
     this.loadAllConfiguredProducts = function () {
 
-        return $http.get("Product/GetAllConfiguredProducts");
+        return app.Ajax('GET', 'Product/GetAllConfiguredProducts', '', $http);
+        //return $http.get("Product/GetAllConfiguredProducts");
     }
 
     this.saveProductConfiguration = function (productDTO) {
 
-        return $http.post("Product/SaveProductConfiguration", productDTO);
+        return app.Ajax('POST', "Product/SaveProductConfiguration", productDTO, $http);
+        //return $http.post("Product/SaveProductConfiguration", productDTO);
     }
 });

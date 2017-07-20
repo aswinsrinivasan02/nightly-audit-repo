@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
     @System.Web.Optimization.Styles.Render("~/Content/css")
     @System.Web.Optimization.Styles.Render("~/Content/metro")
     @System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")
@@ -53,8 +54,11 @@
         </div>
 
     </div>
+
+  
 </body>
 </html>
+<script src="~/Scripts/jquery.blockUI.js"></script>
 <script src="~/Scripts/angular-sanitize.js"></script>
 <script src="~/Scripts/angular-route.js"></script>
 <script src="~/Scripts/ngDialog.js"></script>
