@@ -1,11 +1,7 @@
 ﻿using BallyTech.Infrastructure.Types;
 using SG.NightlyAudit.DTO;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NightlyAuditAPI.Contract
 {
@@ -27,5 +23,9 @@ namespace NightlyAuditAPI.Contract
         [OperationContract]
         [Operation("GetAuditJob", OperationType.GET)]
         List<AuditDTO> GetAuditJob(int auditId);
+
+        [OperationContract]
+        [Operation("SaveAuditJob", OperationType.POST)]
+        bool SaveAuditJob(JobDTO jobDTO);
     }
 }

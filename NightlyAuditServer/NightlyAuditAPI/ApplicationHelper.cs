@@ -33,5 +33,10 @@ namespace NightlyAuditAPI
                          this.workflowService, this.utility, jobId);
         }
 
+        public bool SaveAuditJob(JobDTO jobDTO)
+        {
+            return WorkflowInvoker.Invoke<JobDTO, bool>(
+                "SaveAuditJob", this.workflowService, this.utility, jobDTO);
+        }
     }
 }

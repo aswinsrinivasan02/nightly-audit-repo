@@ -3,9 +3,9 @@ using System.Runtime.Serialization;
 
 namespace SG.NightlyAudit.DTO
 {
-    public enum SchedulingTypes
+    public enum SchedulingTypes : int
     {
-        OneTime,
+        OneTime = 0,
         Daily,
         Weekly,
         Monthly
@@ -21,21 +21,21 @@ namespace SG.NightlyAudit.DTO
         public DateTime StartDateTime { get; set; }
 
         [DataMember]
-        public int ReoccurEveryX { get; set; }
+        public int? ReoccurEveryX { get; set; }
 
         [DataMember]
-        public int SelectedDays { get; set; }
+        public int? SelectedDays { get; set; }
 
         [DataMember]
-        public int SelectedMonths { get; set; }
+        public int? SelectedMonths { get; set; }
 
         [DataMember]
-        public int SelectedOnWeek { get; set; }
+        public int? SelectedOnWeek { get; set; }
 
         [DataMember]
-        public int SelectedDates { get; set; }
+        public int? SelectedDates { get; set; }
 
         [DataMember]
-        public Int64 AuditId { get; set; }
+        public Int64 JobId { get; set; }
     }
 }

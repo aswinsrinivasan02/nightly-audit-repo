@@ -45,6 +45,7 @@
     <Compile Include="ApplicationHelper\AuthenticateEmployee.cs" />
     <Compile Include="ApplicationHelper\GetAllProducts.cs" />
     <Compile Include="ApplicationHelper\GetAuditJob.cs" />
+    <Compile Include="ApplicationHelper\SaveAuditJob.cs" />
     <Compile Include="ApplicationHelper\UpdateProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

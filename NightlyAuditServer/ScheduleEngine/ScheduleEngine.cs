@@ -1,8 +1,7 @@
-﻿using SG.NightlyAudit.DTO;
-using Quartz;
+﻿using Quartz;
 using Quartz.Impl;
 using System;
-using ScheduleEngine.Utilities;
+using SG.NightlyAudit.Domain;
 
 namespace ScheduleEngine
 {
@@ -31,21 +30,20 @@ namespace ScheduleEngine
             this.scheduler.Start();
         }
 
-        public void AddJobForSchedule(ScheduleObject scheduleObject)
+        public void AddJobForSchedule(Job scheduleObject)
         {
-            IJobDetail jobDetail = JobBuilder.Create<Job>().WithIdentity(scheduleObject.AuditId.ToString())
+            IJobDetail jobDetail = JobBuilder.Create<JobClass>().WithIdentity(scheduleObject.AuditId.ToString())
                                     .UsingJobData("JobId", scheduleObject.AuditId).Build();
-            
+
             this.scheduler.DeleteJob(new JobKey(scheduleObject.AuditId.ToString()));
 
-            string cronExpression = CronExpressionGenerator.GenerateCronExpression(scheduleObject);
-
+            string cronExpression = scheduleObject.CronExpression;
             ITrigger trigger = TriggerBuilder.Create().StartAt(new DateTimeOffset(scheduleObject.StartDateTime)).WithCronSchedule(cronExpression).Build();
             scheduler.ScheduleJob(jobDetail, trigger);
         }
     }
 
-    public class Job : IJob
+    public class JobClass : IJob
     {
         public void Execute(IJobExecutionContext context)
         {

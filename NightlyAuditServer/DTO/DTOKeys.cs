@@ -7,5 +7,6 @@ namespace SG.NightlyAudit.DTO
         public const string GetAllProducts = "GetAllProducts";
         public const string UpdateProducts = "UpdateProducts";
         public const string GetAuditJob = "GetAuditJob";
+        public const string SaveAuditJob = "SaveAuditJob";
     }
 }
