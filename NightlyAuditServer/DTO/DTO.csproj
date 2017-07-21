@@ -40,14 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuditJobDTO.cs" />
+    <Compile Include="AuditDTO.cs" />
     <Compile Include="DTOKeys.cs" />
+    <Compile Include="JobDTO.cs" />
     <Compile Include="LoginRequestDTO.cs" />
     <Compile Include="LoginRequestResponseDTO.cs" />
     <Compile Include="ProductDTO.cs" />
     <Compile Include="ProductTypeCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScheduleTypesDTO.cs" />
+    <Compile Include="ScheduleObjectDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

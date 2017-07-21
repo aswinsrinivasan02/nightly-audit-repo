@@ -26,6 +26,6 @@ namespace NightlyAuditAPI.Contract
 
         [OperationContract]
         [Operation("GetAuditJob", OperationType.GET)]
-        List<AuditJobDTO> GetAuditJob(int auditId);
+        List<AuditDTO> GetAuditJob(int auditId);
     }
 }

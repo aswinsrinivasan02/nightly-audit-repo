@@ -14,6 +14,7 @@ namespace ConsoleApplication2
         static void Main(string[] args)
         {
             ISchedulerFactory scheduleFactory = new StdSchedulerFactory();
+            JobKey jobKey = new JobKey("name","group");
             IJobDetail jobDetail = JobBuilder.Create<SayHellp>().WithIdentity("name", "group").Build();
 
             ITrigger trigger = TriggerBuilder.Create().StartNow().UsingJobData("Aswin", true).WithSimpleSchedule(s => s.WithIntervalInSeconds(5).WithRepeatCount(5)).Build();
@@ -24,11 +25,8 @@ namespace ConsoleApplication2
 
             scheduler.ScheduleJob(jobDetail, trigger);
 
-            Thread.Sleep(TimeSpan.FromSeconds(8));
-            scheduler.PauseJob(new JobKey("name", "group"));
-            Thread.Sleep(TimeSpan.FromSeconds(8));
-            scheduler.ResumeJob(new JobKey("name", "group"));
-            Thread.Sleep(TimeSpan.FromMinutes(10));
+            scheduler.DeleteJob(jobKey);
+
             scheduler.Shutdown();
         }
     }

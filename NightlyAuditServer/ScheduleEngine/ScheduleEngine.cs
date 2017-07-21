@@ -28,21 +28,25 @@ namespace ScheduleEngine
         {
             ISchedulerFactory scheduleFactory = new StdSchedulerFactory();
             this.scheduler = scheduleFactory.GetScheduler();
+            this.scheduler.Start();
         }
 
-        public void CreateNewJob(ScheduleObject scheduleObject)
+        public void AddJobForSchedule(ScheduleObject scheduleObject)
         {
-            IJobDetail jobDetail = JobBuilder.Create<Job>().WithIdentity(scheduleObject.JobId.ToString())
-                                    .UsingJobData("JobId", scheduleObject.JobId).Build();
-            string cronExpression = CronExpressionGenerator.GenerateCronExpression(scheduleObject);
+            IJobDetail jobDetail = JobBuilder.Create<Job>().WithIdentity(scheduleObject.AuditId.ToString())
+                                    .UsingJobData("JobId", scheduleObject.AuditId).Build();
             
+            this.scheduler.DeleteJob(new JobKey(scheduleObject.AuditId.ToString()));
+
+            string cronExpression = CronExpressionGenerator.GenerateCronExpression(scheduleObject);
+
             ITrigger trigger = TriggerBuilder.Create().StartAt(new DateTimeOffset(scheduleObject.StartDateTime)).WithCronSchedule(cronExpression).Build();
+            scheduler.ScheduleJob(jobDetail, trigger);
         }
     }
 
     public class Job : IJob
     {
-
         public void Execute(IJobExecutionContext context)
         {
             throw new System.NotImplementedException();

@@ -26,9 +26,9 @@ namespace NightlyAuditAPI
                 this.workflowService, this.utility, productDTO);
         }
 
-        public List<AuditJobDTO> GetAuditJob(int jobId)
+        public List<AuditDTO> GetAuditJob(int jobId)
         {
-            return WorkflowInvoker.Invoke<int, List<AuditJobDTO>>(
+            return WorkflowInvoker.Invoke<int, List<AuditDTO>>(
                          "GetAuditJob",
                          this.workflowService, this.utility, jobId);
         }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace SG.NightlyAudit.DTO
 {
     [DataContract]
-    public class AuditJobDTO
+    public class AuditDTO
     {
         [DataMember]
         public int AuditId { get; set; }
@@ -22,7 +22,7 @@ namespace SG.NightlyAudit.DTO
         [DataMember]
         public List<AuditParametersDTO> AuditParameters { get; set; }
 
-        public AuditJobDTO()
+        public AuditDTO()
         {
             this.AuditParameters = new List<AuditParametersDTO>();
         }

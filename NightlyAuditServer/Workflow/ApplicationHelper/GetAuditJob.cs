@@ -14,13 +14,13 @@ namespace NightlyAuditServer.Workflow
     public class GetAuditJob : BallyTech.Infrastructure.Workflow.Task
     {
         private IWorkflowContext workflowContext;
-        private List<AuditJobDTO> auditJobList;
+        private List<AuditDTO> auditJobList;
 
         public GetAuditJob(IWorkflowContext workflowContext)
             : base(workflowContext)
         {
             this.workflowContext = workflowContext;
-            this.auditJobList = new List<AuditJobDTO>();
+            this.auditJobList = new List<AuditDTO>();
         }
 
         protected override object GetResult()
@@ -49,7 +49,7 @@ namespace NightlyAuditServer.Workflow
 
             foreach (var item in auditJobsEntity)
             {
-                AuditJobDTO dto = new AuditJobDTO();
+                AuditDTO dto = new AuditDTO();
                 dto.AuditId = item.AuditId;
                 dto.AuditName = item.AuditName;
                 dto.IsEnabled = item.IsEnabled;
