@@ -11,7 +11,7 @@ nav {
     position: fixed;
     width: 0px;
     z-index: 800;
-    border-right: 5px solid #97d1d1;
+    border-right: 3px solid #97d1d1;
     text-align: center;
     background-color: #232323; /* Black*/
     padding-top: 200px; /* Place content 350px from the top */
@@ -157,7 +157,7 @@ nav .btn_rollover {
 
 .pageHeader {
     font-size: 25px;
-    padding: 0px;
+    padding-left: 15px;
     color: #232323;
     width: 385px;
     text-overflow: ellipsis;
@@ -192,21 +192,21 @@ nav .btn_rollover {
     padding-bottom: 0px;
     margin: 0px 0 0px;
     background-color: #232323;
-    height: 100px;
-    border-bottom: 5px solid #97d1d1;
+    height: 60px;
+    border-bottom: 2px solid #97d1d1;
     background-size: 300px 150px;
 }
 
 #userLogin {
     float: right;
-    height: 95px;
+    height: 60px;
     padding: 5px;
 }
 
 #headLogo {
     float: left;
-    height: 95px;
-    padding: 5px;
+    height: 60px;
+    padding: 3px;
 }
 
 .form-horizontal .control-label {
@@ -223,3 +223,16 @@ nav .btn_rollover {
     margin-top: 50px;
 }
 
+
+.loader-please-wait {
+    vertical-align: middle;
+    margin-right: 12px;
+    font-weight: normal !important;
+}
+
+.site-user-info
+{
+    color: white;
+    /* background-color: white; */
+    float: right
+}

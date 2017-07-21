@@ -301,6 +301,7 @@
     <Content Include="Content\Images\CMP.png" />
     <Content Include="Content\Images\CompassRose.svg" />
     <Content Include="Content\Images\head_logo.png" />
+    <Content Include="Content\Images\Loader.gif" />
     <Content Include="Content\Images\logo_stamp.svg" />
     <Content Include="Content\Images\SG.png" />
     <Content Include="Content\Images\tracking.png" />
@@ -1116,6 +1117,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -1127,7 +1129,8 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\Views\AuditLayout\LayoutController.js" />
-    <Content Include="Scripts\Views\LayoutModule.js" />
+    <Content Include="Scripts\Views\Common\AuditLibrary.js" />
+    <Content Include="Scripts\Views\AuditLayoutModule.js" />
     <Content Include="Scripts\Views\Audit\AuditController.js" />
     <Content Include="Scripts\Views\Audit\AuditService.js" />
     <Content Include="Scripts\Views\Product\ProductController.js" />

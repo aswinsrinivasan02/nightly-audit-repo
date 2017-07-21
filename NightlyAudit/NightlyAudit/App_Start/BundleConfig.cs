@@ -20,9 +20,11 @@ namespace Audit
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/Scripts/BlockUI").Include("~/Scripts/jquery.blockUI.js"));
+
             bundles.Add(new ScriptBundle("~/Scripts/Angular").Include("~/Scripts/angular.js"));
 
-            bundles.Add(new ScriptBundle("~/Scripts/Layout").Include("~/Scripts/Views/LayoutModule.js"));
+            bundles.Add(new ScriptBundle("~/Scripts/Layout").IncludeDirectory("~/Scripts/Views/Common","*.js",true));
 
             bundles.Add(new ScriptBundle("~/Scripts/AuditLayout").IncludeDirectory("~/Scripts/Views", "*.js", true));
 
