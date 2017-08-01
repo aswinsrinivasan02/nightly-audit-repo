@@ -17,14 +17,14 @@ namespace Audit.Controllers
         [HttpPost]
         public ActionResult SaveProductConfiguration(ProductDTO productDTO)
         {
-            bool isProductSaved = PlatformAPIProxy.Asset.UpdateProduct(productDTO);
+            bool isProductSaved = PlatformAPIProxy.ApplicationHelper.UpdateProduct(productDTO);
             return Json(new { isProductSaved = isProductSaved }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
         public ActionResult GetAllConfiguredProducts()
         {
-            List<ProductDTO> configuredProducts = PlatformAPIProxy.Asset.GetAllProducts();
+            List<ProductDTO> configuredProducts = PlatformAPIProxy.ApplicationHelper.GetAllProducts();
             return Json(new { productList = configuredProducts }, JsonRequestBehavior.AllowGet);
         }
 

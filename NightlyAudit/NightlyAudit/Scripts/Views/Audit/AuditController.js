@@ -1,19 +1,47 @@
 ﻿app.controller('AuditController', ['$scope', '$sce', 'AuditService', '$filter', function ($scope, $sce, AuditService, $filter) {
 
-    //getAuditTypes();
+    $scope.auditDTOList = [];
+    $scope.auditParameterList = [];
+    $scope.auditParameterValuesList = [];
+    $scope.selectedAuditJob = "Select Audit Job";
+    $scope.selectedAuditType;
+    getAuditTypes(0);
 
+    function getAuditTypes(auditId) {
+        
+        var auditTypes = AuditService.getAuditTypes(auditId);
+        auditTypes.then(function (result) {
+           
+            $scope.auditDTOList = result.data.auditDetailList;
+        
+          
+            if ($scope.auditDTOList != null && $scope.selectedAuditType != null)
+            {
+                debugger;
+                var selectedAuditIndex;
+                selectedAuditIndex = $scope.auditDTOList.map(function (img) { return img.AuditId; }).indexOf($scope.selectedAuditType.AuditId);
+                $scope.auditParameterList = $scope.auditDTOList[selectedAuditIndex];
 
-    function getAuditTypes() {
-        var auditTypes = AuditService.getAuditTypes();
-        auditTypes.then(function (d) {
+                //to check if there can be multiple paramters
+                $scope.paramaterLabel = $scope.auditParameterList.AuditParameters[0].ParameterName+" "+":" ;
 
-            $scope.auditTypes = d.data.AuditTypes;
+                $scope.auditParameterValuesList = $scope.auditParameterList.ParameterValues;
+            }
+
+          
         });
     }
 
-    $scope.loadDynamicControls = function () {
+    $scope.loadDynamicControls = function (auditType) {
 
-        alert($scope.selectAuditType);
+        if (auditType != null) {
+
+            $scope.selectedAuditType = auditType;
+            $scope.selectedAuditJob = auditType.AuditName;
+            getAuditTypes(auditType.AuditId);
+           
+        }
+
 
     };
 
@@ -22,8 +50,8 @@
 
 app.service("AuditService", function ($http) {
 
-    this.getAuditTypes = function () {
+    this.getAuditTypes = function (auditId) {
 
-        return $http.get("Audit/GetAuditTypes");
+        return app.Ajax('GET', 'Audit/GetAuditTypes?auditId=' + auditId, '', $http);
     }
 });

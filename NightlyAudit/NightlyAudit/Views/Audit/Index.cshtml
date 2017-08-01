@@ -2,18 +2,37 @@
 @{
     Layout = null;
 }
+<div class="pageHeader">
+    New Audit Job
+</div>
+<div class="form">
+    <div class="container">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2">Select Audit Type:</label>
+                <div class="col-sm-4">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle " type="button" data-toggle="dropdown">
+                            {{selectedAuditJob}}
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a ng-click="loadDynamicControls('Select Audit Job')"></a></li>
+                            <li ng-repeat="auditType in auditDTOList">
+                                <a ng-model="selectedAuditJob" ng-click="loadDynamicControls(auditType)">{{auditType.AuditName}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">{{paramaterLabel}}</label>
+                <div class="col-sm-4">
 
-<div>
-    <div class="align-inline ">
-        <div >
-            <label>Audit Type</label>
-        </div>
-        <div class="dropdown-content">
-            <select ng-model="selectAuditType" ng-change="loadDynamicControls()">
-                <option value="">-- Select AuditType --</option>
-                <option ng-repeat="auditType in auditTypes"  value="{{auditType.AuditId}}">{{auditType.AuditName}}</option>
-            </select>
-        </div>
+                </div>
+            </div>
+
+        </form>
     </div>
 </div>
 

@@ -48,7 +48,7 @@
                 url: "Login/Validate",
                 data: "{'userName':'" + $('#inputUserName').val() + "', 'password':'" + $('#inputPassword').val() + "'}",
                 success: function (result) {
-                    debugger;
+                  
                     window.location.href = result.redirecturl;
                 }
             });
