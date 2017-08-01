@@ -19,5 +19,10 @@ namespace Audit.Controllers
             List<AuditDTO> auditDTOList = PlatformAPIProxy.ApplicationHelper.GetAuditJob(auditId);
             return Json(new { auditDetailList = auditDTOList }, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult LoadPartialView(string controlType)
+        {
+            return PartialView("_"+controlType);
+        }
     }
 }
