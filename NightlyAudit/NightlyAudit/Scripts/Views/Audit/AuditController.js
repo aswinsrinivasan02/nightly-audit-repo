@@ -2,7 +2,6 @@
 
     $scope.auditDTOList = [];
     $scope.auditParameterList = [];
-    $scope.auditParameterValuesList = [];
     $scope.selectedAuditJob = "Select Audit Job";
     $scope.selectedAuditType;
     $scope.hideDynamicControl = true;
@@ -10,12 +9,9 @@
     $scope.tpl = {};
     $scope.tpl.contentUrl = "";
 
-    loadFileForNgInclude = function (parameterType, auditParameterValuesList) {
+    loadFileForNgInclude = function () {
 
-        $scope.hideDynamicControl = false;
-        $scope.tpl.contentUrl='/Audit/LoadPartialView?controlType=' + parameterType
-        $('#ngInclude').attr('src', $scope.tpl.contentUrl);
-        $('#ngInclude').attr('onload', item = $scope.auditParameterValuesList);
+        $scope.tpl.contentUrl = '/Audit/LoadPartialView?controlType=' + $scope.parameterType
     };
 
     function getAuditTypes(auditId) {
@@ -37,9 +33,11 @@
 
                 $scope.parameterType = $scope.auditParameterList.AuditParameters[0].ParameterType;
 
-                $scope.auditParameterValuesList = $scope.auditParameterList.ParameterValues;
+                $scope.auditParameterValuesList = $scope.auditParameterList.AuditParameters[0].ParameterValues;
+                                
+                $scope.hideDynamicControl = false;
 
-                loadFileForNgInclude($scope.parameterType, $scope.auditParameterValuesList);
+                loadFileForNgInclude();
 
             }
 

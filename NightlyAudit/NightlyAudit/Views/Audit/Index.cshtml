@@ -26,10 +26,10 @@
                 </div>
             </div>
 
-            <div ng-hide="hideDynamicControl" class="form-group">
+            <div  class="form-group">
                 <label class="control-label col-sm-2">{{paramaterLabel}}</label>
                 <div class="col-sm-4">
-                    <ng-include id="ngInclude" ng-controller="" onload="" src="tpl.contentUrl"></ng-include> 
+                    <ng-include id="ngInclude"  ng-controller="AuditController" onload="item = auditParameterValuesList" src="tpl.contentUrl"></ng-include> 
                 </div>
             </div>
 
