@@ -26,15 +26,168 @@
                 </div>
             </div>
 
-            <div  class="form-group">
+            <div ng-hide="hideDynamicControl" class="form-group">
                 <label class="control-label col-sm-2">{{paramaterLabel}}</label>
                 <div class="col-sm-4">
-                    <ng-include id="ngInclude"  ng-controller="AuditController" onload="item = auditParameterValuesList" src="tpl.contentUrl"></ng-include> 
+                    <ng-include id="ngInclude" ng-controller="AuditController" onload="item = auditParameterValuesList" src="tpl.contentUrl"></ng-include>
                 </div>
             </div>
+            <div ng-hide="hideDynamicControl" class="form-group row scheduler">
+                <div>
+                    <input type="radio" name="checkboxes[249]" id="frm-test-elm-120-1" autocomplete="off" />
+                    <div class="btn-group">
+                        <label for="frm-test-elm-120-1" class="btn btn-default">
+                            <span class="fa fa-check-circle-o fa-lg"></span>
+                            <span class="fa fa-circle-o fa-lg"></span>
+                        </label>
+                    </div>
+                    <label class="control-label" for="frm-test-elm-120-2">One Time </label>
+                </div>
+                <div>
+                    <input type="radio" name="checkboxes[249]" id="frm-test-elm-120-2" autocomplete="off" />
+                    <div class="btn-group">
+                        <label for="frm-test-elm-120-2" class="btn btn-default">
+                            <span class="fa fa-check-circle-o fa-lg"></span>
+                            <span class="fa fa-circle-o fa-lg"></span>
+                        </label>
+                    </div>
+                    <label class="control-label" for="frm-test-elm-120-2">Daily</label>
+                </div>
+                <div>
+                    <input type="radio" name="checkboxes[249]" id="frm-test-elm-120-3" autocomplete="off" />
+                    <div class="btn-group">
+                        <label for="frm-test-elm-120-3" class="btn btn-default">
+                            <span class="fa fa-check-circle-o fa-lg"></span>
+                            <span class="fa fa-circle-o fa-lg"></span>
+                        </label>
+                    </div>
+                    <label class="control-label" for="frm-test-elm-120-2">Weekly</label>
+                </div>
+                <div>
+                    <input type="radio" name="checkboxes[249]" id="frm-test-elm-120-4" autocomplete="off" />
+                    <div class="btn-group">
+                        <label for="frm-test-elm-120-4" class="btn btn-default">
+                            <span class="fa fa-check-circle-o fa-lg"></span>
+                            <span class="fa fa-circle-o fa-lg"></span>
+                        </label>
+                    </div>
+                    <label class="control-label" for="frm-test-elm-120-2">Monthly</label>
+                </div>
 
+
+                @*<div class="col-sm-2">
+                        <input type="radio" name="checkboxes[249]" id="frm-test-elm-120" autocomplete="off" />
+                        <div class="btn-group">
+                            <label for="frm-test-elm-120" class="btn btn-default">
+                                <span class="fa fa-check-circle-o fa-lg"></span>
+                                <span class="fa fa-circle-o fa-lg"></span>
+                            </label>
+                        </div>
+                        <label class="control-label col-sm-2" for="frm-test-elm-120">One Time:</label>
+
+                    </div>*@
+            </div>
         </form>
     </div>
 </div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<style type="text/css">
+    /* Checkbox and Radio buttons */
+    .scheduler input[type="radio"],
+    .scheduler input[type="checkbox"] {
+        display: none;
+    }
 
+        .scheduler input[type="checkbox"] + .btn-group > label,
+        .scheduler input[type="radio"] + .btn-group > label {
+            white-space: normal;
+        }
 
+            .scheduler input[type="checkbox"] + .btn-group > label.btn-default,
+            .scheduler input[type="radio"] + .btn-group > label.btn-default {
+                color: #333;
+                background-color: #fff;
+                border-color: #ccc;
+            }
+
+            .scheduler input[type="checkbox"] + .btn-group > label.btn-primary,
+            .scheduler input[type="radio"] + .btn-group > label.btn-primary {
+                color: #fff;
+                background-color: #428bca;
+                border-color: #357ebd;
+            }
+
+            .scheduler input[type="checkbox"] + .btn-group > label.btn-success,
+            .scheduler input[type="radio"] + .btn-group > label.btn-success {
+                color: #fff;
+                background-color: #5cb85c;
+                border-color: #4cae4c;
+            }
+
+            .scheduler input[type="checkbox"] + .btn-group > label.btn-info,
+            .scheduler input[type="radio"] + .btn-group > label.btn-info {
+                color: #fff;
+                background-color: #5bc0de;
+                border-color: #46b8da;
+            }
+
+            .scheduler input[type="checkbox"] + .btn-group > label.btn-warning,
+            .scheduler input[type="radio"] + .btn-group > label.btn-warning {
+                color: #fff;
+                background-color: #f0ad4e;
+                border-color: #eea236;
+            }
+
+            .scheduler input[type="checkbox"] + .btn-group > label.btn-danger,
+            .scheduler input[type="radio"] + .btn-group > label.btn-danger {
+                color: #fff;
+                background-color: #d9534f;
+                border-color: #d43f3a;
+            }
+
+            .scheduler input[type="checkbox"] + .btn-group > label.btn-link,
+            .scheduler input[type="radio"] + .btn-group > label.btn-link {
+                font-weight: normal;
+                color: #428bca;
+                border-radius: 0;
+            }
+
+            .scheduler input[type="radio"] + .btn-group > label span:first-child,
+            .scheduler input[type="checkbox"] + .btn-group > label span:first-child {
+                display: none;
+            }
+
+                .scheduler input[type="radio"] + .btn-group > label span:first-child + span,
+                .scheduler input[type="checkbox"] + .btn-group > label span:first-child + span {
+                    display: inline-block;
+                }
+
+        .scheduler input[type="radio"]:checked + .btn-group > label span:first-child,
+        .scheduler input[type="checkbox"]:checked + .btn-group > label span:first-child {
+            display: inline-block;
+        }
+
+            .scheduler input[type="radio"]:checked + .btn-group > label span:first-child + span,
+            .scheduler input[type="checkbox"]:checked + .btn-group > label span:first-child + span {
+                display: none;
+            }
+
+        .scheduler input[type="checkbox"] + .btn-group > label span[class*="fa-"],
+        .scheduler input[type="radio"] + .btn-group > label span[class*="fa-"] {
+            width: 15px;
+            float: left;
+            margin: 4px 0 2px -2px;
+        }
+
+        .scheduler input[type="checkbox"] + .btn-group > label span.content,
+        .scheduler input[type="radio"] + .btn-group > label span.content {
+            margin-left: 10px;
+        }
+
+    .scheduler {
+        width: 150px;
+        border-right: 1px solid black;
+        padding: 15px;
+    }
+    /* End::Checkbox and Radio buttons */
+</style>
