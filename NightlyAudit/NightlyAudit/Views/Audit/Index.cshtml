@@ -32,60 +32,155 @@
                     <ng-include id="ngInclude" ng-controller="AuditController" onload="item = auditParameterValuesList" src="tpl.contentUrl"></ng-include>
                 </div>
             </div>
-            <div ng-hide="hideDynamicControl" class="form-group row scheduler">
-                <div>
-                    <input type="radio" name="checkboxes[249]" id="frm-test-elm-120-1" autocomplete="off" />
-                    <div class="btn-group">
-                        <label for="frm-test-elm-120-1" class="btn btn-default">
-                            <span class="fa fa-check-circle-o fa-lg"></span>
-                            <span class="fa fa-circle-o fa-lg"></span>
-                        </label>
-                    </div>
-                    <label class="control-label" for="frm-test-elm-120-2">One Time </label>
-                </div>
-                <div>
-                    <input type="radio" name="checkboxes[249]" id="frm-test-elm-120-2" autocomplete="off" />
-                    <div class="btn-group">
-                        <label for="frm-test-elm-120-2" class="btn btn-default">
-                            <span class="fa fa-check-circle-o fa-lg"></span>
-                            <span class="fa fa-circle-o fa-lg"></span>
-                        </label>
-                    </div>
-                    <label class="control-label" for="frm-test-elm-120-2">Daily</label>
-                </div>
-                <div>
-                    <input type="radio" name="checkboxes[249]" id="frm-test-elm-120-3" autocomplete="off" />
-                    <div class="btn-group">
-                        <label for="frm-test-elm-120-3" class="btn btn-default">
-                            <span class="fa fa-check-circle-o fa-lg"></span>
-                            <span class="fa fa-circle-o fa-lg"></span>
-                        </label>
-                    </div>
-                    <label class="control-label" for="frm-test-elm-120-2">Weekly</label>
-                </div>
-                <div>
-                    <input type="radio" name="checkboxes[249]" id="frm-test-elm-120-4" autocomplete="off" />
-                    <div class="btn-group">
-                        <label for="frm-test-elm-120-4" class="btn btn-default">
-                            <span class="fa fa-check-circle-o fa-lg"></span>
-                            <span class="fa fa-circle-o fa-lg"></span>
-                        </label>
-                    </div>
-                    <label class="control-label" for="frm-test-elm-120-2">Monthly</label>
-                </div>
-
-
-                @*<div class="col-sm-2">
-                        <input type="radio" name="checkboxes[249]" id="frm-test-elm-120" autocomplete="off" />
+            <div ng-hide="hideDynamicControl" class="form-group">
+                <div class="col-sm-2 scheduler">
+                    <div>
+                        <input type="radio" name="checkboxes[249]" id="frm-test-elm-120-1" autocomplete="off" checked />
                         <div class="btn-group">
-                            <label for="frm-test-elm-120" class="btn btn-default">
+                            <label for="frm-test-elm-120-1" class="btn btn-default">
                                 <span class="fa fa-check-circle-o fa-lg"></span>
                                 <span class="fa fa-circle-o fa-lg"></span>
                             </label>
                         </div>
-                        <label class="control-label col-sm-2" for="frm-test-elm-120">One Time:</label>
+                        <label class="control-label" for="frm-test-elm-120-2">One Time </label>
+                    </div>
+                    <div>
+                        <input type="radio" name="checkboxes[249]" id="frm-test-elm-120-2" autocomplete="off" />
+                        <div class="btn-group">
+                            <label for="frm-test-elm-120-2" class="btn btn-default">
+                                <span class="fa fa-check-circle-o fa-lg"></span>
+                                <span class="fa fa-circle-o fa-lg"></span>
+                            </label>
+                        </div>
+                        <label class="control-label" for="frm-test-elm-120-2">Daily</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="checkboxes[249]" id="frm-test-elm-120-3" autocomplete="off" />
+                        <div class="btn-group">
+                            <label for="frm-test-elm-120-3" class="btn btn-default">
+                                <span class="fa fa-check-circle-o fa-lg"></span>
+                                <span class="fa fa-circle-o fa-lg"></span>
+                            </label>
+                        </div>
+                        <label class="control-label" for="frm-test-elm-120-2">Weekly</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="checkboxes[249]" id="frm-test-elm-120-4" autocomplete="off" />
+                        <div class="btn-group">
+                            <label for="frm-test-elm-120-4" class="btn btn-default">
+                                <span class="fa fa-check-circle-o fa-lg"></span>
+                                <span class="fa fa-circle-o fa-lg"></span>
+                            </label>
+                        </div>
+                        <label class="control-label" for="frm-test-elm-120-2">Monthly</label>
+                    </div>
+                </div>
+                <div class="col-sm-8 scheduler-right">
+                    <div class="form-group row scheduler-right">
+                        <label class="control-label col-sm-2">Start:</label>
+                        <div class="col-sm-2">
+                            <div class='input-group date' id='datetimepicker1'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
 
-                    </div>*@
+                        </div>
+                    </div>
+                    <div class="form-group row scheduler-right">
+                        <label class="control-label col-sm-2">Recur Every:</label>
+                        <div class="col-sm-2">
+                            <input type='text' class="form-control input-three-digit" />
+                        </div>
+                        <label class="control-label col-sm-2">days</label>
+                    </div>
+                    <div class="form-group row scheduler scheduler-right">
+                        <div class="col col-sm-6 days-week">
+                            <input type="checkbox" name="checkboxes[100-0]" id="frm-test-elm-100-0" autocomplete="off" />
+                            <div class="btn-group">
+                                <label for="frm-test-elm-100-0" class="btn btn-default">
+                                    <span class="fa fa-check-square-o fa-lg"></span>
+                                    <span class="fa fa-square-o fa-lg"></span>
+                                    <span class="content">Sunday</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col col-sm-6 days-week">
+                            <input type="checkbox" name="checkboxes[100-0]" id="frm-test-elm-100-1" autocomplete="off" />
+                            <div class="btn-group">
+                                <label for="frm-test-elm-100-1" class="btn btn-default">
+                                    <span class="fa fa-check-square-o fa-lg"></span>
+                                    <span class="fa fa-square-o fa-lg"></span>
+                                    <span class="content">Monday</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col col-sm-6 days-week">
+                            <input type="checkbox" name="checkboxes[100-0]" id="frm-test-elm-100-2" autocomplete="off" />
+                            <div class="btn-group">
+                                <label for="frm-test-elm-100-2" class="btn btn-default">
+                                    <span class="fa fa-check-square-o fa-lg"></span>
+                                    <span class="fa fa-square-o fa-lg"></span>
+                                    <span class="content">Tuesday</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col col-sm-6 days-week">
+                            <input type="checkbox" name="checkboxes[100-0]" id="frm-test-elm-100-3" autocomplete="off" />
+                            <div class="btn-group">
+                                <label for="frm-test-elm-100-3" class="btn btn-default">
+                                    <span class="fa fa-check-square-o fa-lg"></span>
+                                    <span class="fa fa-square-o fa-lg"></span>
+                                    <span class="content">Wednesday</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row scheduler scheduler-right">
+                        <div class="col col-sm-6 days-week">
+                            <input type="checkbox" name="checkboxes[100-0]" id="frm-test-elm-100-4" autocomplete="off" />
+                            <div class="btn-group">
+                                <label for="frm-test-elm-100-4" class="btn btn-default">
+                                    <span class="fa fa-check-square-o fa-lg"></span>
+                                    <span class="fa fa-square-o fa-lg"></span>
+                                    <span class="content">Thursday</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col col-sm-6 days-week">
+                            <input type="checkbox" name="checkboxes[100-0]" id="frm-test-elm-100-5" autocomplete="off" />
+                            <div class="btn-group">
+                                <label for="frm-test-elm-100-5" class="btn btn-default">
+                                    <span class="fa fa-check-square-o fa-lg"></span>
+                                    <span class="fa fa-square-o fa-lg"></span>
+                                    <span class="content">Friday</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col col-sm-6 days-week">
+                            <input type="checkbox" name="checkboxes[100-0]" id="frm-test-elm-100-6" autocomplete="off" />
+                            <div class="btn-group">
+                                <label for="frm-test-elm-100-6" class="btn btn-default">
+                                    <span class="fa fa-check-square-o fa-lg"></span>
+                                    <span class="fa fa-square-o fa-lg"></span>
+                                    <span class="content">Saturday</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row scheduler scheduler-right">
+                        <label class="control-label col-sm-2">Months:</label>
+                        <div class="col-sm-4">
+                            <div class='input-group date' id='datetimepicker1'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
@@ -185,9 +280,43 @@
         }
 
     .scheduler {
-        width: 150px;
         border-right: 1px solid black;
         padding: 15px;
     }
+
+    .scheduler-right {
+        padding: 0px;
+        margin-left: 25px;
+        border-right: 0px solid black;
+        margin-bottom: 5px;
+    }
+
+        .scheduler-right .col-sm-4 {
+            padding-right: 0;
+            padding-left: 5px;
+            width: 28.333333%;
+        }
+
+        .scheduler-right .col-sm-6 {
+            padding-right: 0;
+            padding-left: 5px;
+        }
+
+        .scheduler-right .col-sm-2 {
+            padding-right: 0;
+            padding-left: 5px;
+        }
+
+    .input-three-digit {
+        width: 100%;
+    }
+
+    .days-week {
+        width: 135px;
+    }
+
+        .days-week .btn-default {
+            width: 130px;
+        }
     /* End::Checkbox and Radio buttons */
 </style>
