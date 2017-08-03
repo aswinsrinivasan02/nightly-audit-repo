@@ -1159,7 +1159,6 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\_CheckBoxList.cshtml" />
-    <Content Include="Views\Audit\ViewAuditJobs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
