@@ -2,9 +2,14 @@
 @{
     Layout = null;
 }
+
+@System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+@System.Web.Optimization.Scripts.Render("~/Scripts/BlockUI")
+@System.Web.Optimization.Scripts.Render("~/Scripts/MultiSelect")
 <div class="pageHeader">
     New Audit Job
 </div>
+
 <div class="form">
     <div class="container">
         <form class="form-horizontal">
@@ -81,9 +86,9 @@
                         <div class="col-sm-2">
                             <div class='input-group date' id='datetimepicker1'>
                                 <input type='text' class="form-control" />
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
+                                @*<span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>*@
                             </div>
 
                         </div>
@@ -169,15 +174,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row scheduler scheduler-right">
+                    <div class="form-group row  scheduler-right">
                         <label class="control-label col-sm-2">Months:</label>
                         <div class="col-sm-4">
-                            <div class='input-group date' id='datetimepicker1'>
-                                <input type='text' class="form-control" />
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
+                            <select id="demo" multiple="multiple">
+                                <option value="Jan">January</option>
+                                <option value="Feb">February</option>
+                                <option value="Mar">March</option>
+                                <option value="Apr">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="Jul">July</option>
+                                <option value="Aug">August</option>
+                                <option value="Sep">September</option>
+                                <option value="Pct">October</option>
+                                <option value="nov">November</option>
+                                <option value="Dec">Decemeber</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -185,6 +198,7 @@
         </form>
     </div>
 </div>
+<link href="~/Content/bootstrap-multiselect.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 <style type="text/css">
     /* Checkbox and Radio buttons */
@@ -320,3 +334,14 @@
         }
     /* End::Checkbox and Radio buttons */
 </style>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#demo').multiselect({
+            includeSelectAllOption: true,
+            maxHeight: 200
+        });
+
+    });
+
+</script>
