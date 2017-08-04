@@ -1,0 +1,137 @@
+﻿/* Checkbox and Radio buttons */
+.scheduler input[type="radio"],
+.scheduler input[type="checkbox"] {
+    display: none;
+}
+
+    .scheduler input[type="checkbox"] + .btn-group > label,
+    .scheduler input[type="radio"] + .btn-group > label {
+        white-space: normal;
+    }
+
+        .scheduler input[type="checkbox"] + .btn-group > label.btn-default,
+        .scheduler input[type="radio"] + .btn-group > label.btn-default {
+            color: #333;
+            background-color: #fff;
+            border-color: #ccc;
+        }
+
+        .scheduler input[type="checkbox"] + .btn-group > label.btn-primary,
+        .scheduler input[type="radio"] + .btn-group > label.btn-primary {
+            color: #fff;
+            background-color: #428bca;
+            border-color: #357ebd;
+        }
+
+        .scheduler input[type="checkbox"] + .btn-group > label.btn-success,
+        .scheduler input[type="radio"] + .btn-group > label.btn-success {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #4cae4c;
+        }
+
+        .scheduler input[type="checkbox"] + .btn-group > label.btn-info,
+        .scheduler input[type="radio"] + .btn-group > label.btn-info {
+            color: #fff;
+            background-color: #5bc0de;
+            border-color: #46b8da;
+        }
+
+        .scheduler input[type="checkbox"] + .btn-group > label.btn-warning,
+        .scheduler input[type="radio"] + .btn-group > label.btn-warning {
+            color: #fff;
+            background-color: #f0ad4e;
+            border-color: #eea236;
+        }
+
+        .scheduler input[type="checkbox"] + .btn-group > label.btn-danger,
+        .scheduler input[type="radio"] + .btn-group > label.btn-danger {
+            color: #fff;
+            background-color: #d9534f;
+            border-color: #d43f3a;
+        }
+
+        .scheduler input[type="checkbox"] + .btn-group > label.btn-link,
+        .scheduler input[type="radio"] + .btn-group > label.btn-link {
+            font-weight: normal;
+            color: #428bca;
+            border-radius: 0;
+        }
+
+        .scheduler input[type="radio"] + .btn-group > label span:first-child,
+        .scheduler input[type="checkbox"] + .btn-group > label span:first-child {
+            display: none;
+        }
+
+            .scheduler input[type="radio"] + .btn-group > label span:first-child + span,
+            .scheduler input[type="checkbox"] + .btn-group > label span:first-child + span {
+                display: inline-block;
+            }
+
+    .scheduler input[type="radio"]:checked + .btn-group > label span:first-child,
+    .scheduler input[type="checkbox"]:checked + .btn-group > label span:first-child {
+        display: inline-block;
+    }
+
+        .scheduler input[type="radio"]:checked + .btn-group > label span:first-child + span,
+        .scheduler input[type="checkbox"]:checked + .btn-group > label span:first-child + span {
+            display: none;
+        }
+
+    .scheduler input[type="checkbox"] + .btn-group > label span[class*="fa-"],
+    .scheduler input[type="radio"] + .btn-group > label span[class*="fa-"] {
+        width: 15px;
+        float: left;
+        margin: 4px 0 2px -2px;
+    }
+
+    .scheduler input[type="checkbox"] + .btn-group > label span.content,
+    .scheduler input[type="radio"] + .btn-group > label span.content {
+        margin-left: 10px;
+    }
+
+.scheduler {
+    border-right: 1px solid black;
+    padding: 15px;
+}
+
+.scheduler-right {
+    padding: 0px;
+    margin-left: 25px;
+    border-right: 0px solid black;
+    margin-bottom: 5px;
+}
+
+    .scheduler-right .col-sm-4 {
+        padding-right: 0;
+        padding-left: 5px;
+        width: 165px;
+    }
+
+    .scheduler-right .col-sm-6 {
+        padding-right: 0;
+        padding-left: 5px;
+    }
+
+    .scheduler-right .col-sm-2 {
+        padding-right: 0;
+        padding-left: 5px;
+    }
+
+.input-three-digit {
+    width: 100%;
+}
+
+.days-week {
+    width: 135px;
+}
+
+    .days-week .btn-default {
+        width: 130px;
+    }
+
+#divDays > div > span > div > ul > li {
+    float: left;
+    display: inline;
+}
+/* End::Checkbox and Radio buttons */

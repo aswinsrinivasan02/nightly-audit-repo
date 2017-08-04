@@ -314,6 +314,8 @@
     <Content Include="Content\Audit\ngDialog-theme-default.css" />
     <Content Include="Content\Audit\ngDialog.css" />
     <Content Include="Content\ngDialog.min.css" />
+    <Content Include="Content\process-tab.css" />
+    <Content Include="Content\scheduler.css" />
     <Content Include="Db\Configuration.sdf" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -1128,6 +1130,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\ngDialog.js" />
     <Content Include="Scripts\ngDialog.min.js" />
+    <Content Include="Scripts\process-tab.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\Views\AuditLayout\LayoutController.js" />

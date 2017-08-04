@@ -8,7 +8,9 @@
     getAuditTypes(0);
     $scope.tpl = {};
     $scope.tpl.contentUrl = "";
-
+    $scope.showDaily = false;
+    $scope.showWeekly = false;
+    $scope.showMonthly = false;
     loadFileForNgInclude = function () {
 
         $scope.tpl.contentUrl = '/Audit/LoadPartialView?controlType=' + $scope.parameterType
@@ -34,7 +36,7 @@
                 $scope.parameterType = $scope.auditParameterList.AuditParameters[0].ParameterType;
 
                 $scope.auditParameterValuesList = $scope.auditParameterList.AuditParameters[0].ParameterValues;
-                                
+
                 $scope.hideDynamicControl = false;
 
                 loadFileForNgInclude();
@@ -53,6 +55,38 @@
             $scope.selectedAuditJob = auditType.AuditName;
             getAuditTypes(auditType.AuditId);
         }
+    };
+
+    $scope.showScheduler = function (showTypeCurrent) {
+        debugger;
+        if (showTypeCurrent != null) {
+
+            if (showTypeCurrent == 'showOneTime') {
+                $scope.showDaily = false;
+                $scope.showWeekly = false;
+                $scope.showMonthly = false;
+            }
+            else if (showTypeCurrent == 'showDaily') {
+                $scope.showDaily = true;
+                $scope.showWeekly = false;
+                $scope.showMonthly = false;
+                $scope.recurrenceText="days"
+            }
+            else if (showTypeCurrent == 'showWeekly') {
+
+                $scope.showWeekly = true;
+                $scope.showDaily = true;
+                $scope.showMonthly = false;
+                $scope.recurrenceText = "weeks on:"
+            }
+            else if (showTypeCurrent == 'showMonthly') {
+
+                $scope.showWeekly = false;
+                $scope.showDaily = false;
+                $scope.showMonthly = true;
+            }
+        }
+
     };
 
 
