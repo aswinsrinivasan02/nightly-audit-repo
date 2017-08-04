@@ -134,4 +134,9 @@
     float: left;
     display: inline;
 }
+
+.scheduler-month {
+    padding: 0px;
+    border-right: 0px;
+}
 /* End::Checkbox and Radio buttons */

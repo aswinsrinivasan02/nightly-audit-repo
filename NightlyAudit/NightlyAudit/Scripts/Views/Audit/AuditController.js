@@ -11,6 +11,7 @@
     $scope.showDaily = false;
     $scope.showWeekly = false;
     $scope.showMonthly = false;
+    $scope.isApplyClassOn = true;
     loadFileForNgInclude = function () {
 
         $scope.tpl.contentUrl = '/Audit/LoadPartialView?controlType=' + $scope.parameterType
@@ -58,7 +59,7 @@
     };
 
     $scope.showScheduler = function (showTypeCurrent) {
-        debugger;
+
         if (showTypeCurrent != null) {
 
             if (showTypeCurrent == 'showOneTime') {
@@ -70,7 +71,7 @@
                 $scope.showDaily = true;
                 $scope.showWeekly = false;
                 $scope.showMonthly = false;
-                $scope.recurrenceText="days"
+                $scope.recurrenceText = "days"
             }
             else if (showTypeCurrent == 'showWeekly') {
 
@@ -84,6 +85,20 @@
                 $scope.showWeekly = false;
                 $scope.showDaily = false;
                 $scope.showMonthly = true;
+            }
+            else if (showTypeCurrent == 'showMonthly') {
+
+                $scope.showWeekly = false;
+                $scope.showDaily = false;
+                $scope.showMonthly = true;
+            }
+            else if (showTypeCurrent=='Days') {
+                $scope.isApplyClassDays = false;
+                $scope.isApplyClassOn = true;
+            }
+            else if (showTypeCurrent=='On') {
+                $scope.isApplyClassOn = false;
+                $scope.isApplyClassDays = true;
             }
         }
 
