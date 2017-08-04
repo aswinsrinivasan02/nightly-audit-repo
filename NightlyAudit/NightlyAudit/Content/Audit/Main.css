@@ -241,3 +241,8 @@ nav .btn_rollover {
     pointer-events:none;
     opacity:0.5;
 }
+
+.date
+{
+    width:200px;
+}

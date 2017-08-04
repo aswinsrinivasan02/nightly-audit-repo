@@ -311,6 +311,11 @@
 <link href="~/Content/bootstrap-multiselect.css" rel="stylesheet" />
 <script src="~/Scripts/process-tab.js"></script>
 <link href="~/Content/scheduler.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+<script src="~/Scripts/moment.min.js"></script>
+<script src="~/Scripts/moment-with-locales.min.js"></script>
+<script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+<script src="~/Scripts/datetimepickerDirective.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 <script type="text/javascript">
@@ -338,6 +343,11 @@
             nonSelectedText: 'Select Day'
         });
 
+
+        $('#datetimepicker').datetimepicker({
+           
+            useCurrent: false
+        });
 
     });
 
