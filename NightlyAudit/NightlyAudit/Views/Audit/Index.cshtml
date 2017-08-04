@@ -20,7 +20,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a ng-click="loadDynamicControls('Select Audit Job')"></a></li>
+
                     <li ng-repeat="auditType in auditDTOList">
                         <a ng-model="selectedAuditJob" ng-click="loadDynamicControls(auditType)">{{auditType.AuditName}}</a>
                     </li>
@@ -213,7 +213,7 @@
                             </div>
                             <div ng-show="showMonthly" id="divDays" class="form-group row  scheduler-right">
                                 <div class="scheduler scheduler-month col-sm-2">
-                                    <input type="radio" ng-click="showScheduler('Days')" name="checkboxes[249]" id="frm-test-elm-120-days" autocomplete="off" checked />
+                                    <input type="radio" ng-click="showScheduler('Days')" name="checkboxes[250]" id="frm-test-elm-120-days" autocomplete="off" checked />
                                     <div class="btn-group">
                                         <label for="frm-test-elm-120-days" class="btn btn-default">
                                             <span class="fa fa-check-circle-o fa-lg"></span>
@@ -262,7 +262,7 @@
                             </div>
                             <div ng-show="showMonthly" class="form-group row  scheduler-right">
                                 <div class="scheduler scheduler-month col-sm-2">
-                                    <input type="radio" ng-click="showScheduler('On')" name="checkboxes[249]" id="frm-test-elm-120-on" autocomplete="off" checked />
+                                    <input type="radio" ng-click="showScheduler('On')" name="checkboxes[250]" id="frm-test-elm-120-on" autocomplete="off" />
                                     <div class="btn-group">
                                         <label for="frm-test-elm-120-on" class="btn btn-default">
                                             <span class="fa fa-check-circle-o fa-lg"></span>
@@ -345,7 +345,7 @@
 
 
         $('#datetimepicker').datetimepicker({
-           
+
             useCurrent: false
         });
 
