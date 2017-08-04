@@ -1,9 +1,7 @@
-﻿using System;
+﻿using BallyTech.UI.Web.Platform;
+using SG.NightlyAudit.DTO;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using ViewModels.Audit;
 
 namespace Audit.Controllers
 {
@@ -15,17 +13,18 @@ namespace Audit.Controllers
             return View();
         }
 
-        public ActionResult GetAuditTypes()
+        [HttpGet]
+        public ActionResult GetAuditTypes(int auditId)
         {
-            var resultModel = new AuditViewModel();
-            
-           
-            resultModel.AuditTypes = new List<AuditType>()
-            {
-               new AuditType { AuditId=1,AuditName="TransactionPVAudit"}
-            };
-
-           return Json(resultModel, JsonRequestBehavior.AllowGet);
+            List<AuditDTO> auditDTOList = PlatformAPIProxy.ApplicationHelper.GetAuditJob(auditId);
+            return Json(new { auditDetailList = auditDTOList }, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult LoadPartialView(string controlType)
+        {
+            return PartialView("_"+controlType);
+        }
+       
+        
     }
 }

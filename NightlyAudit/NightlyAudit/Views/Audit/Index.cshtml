@@ -3,18 +3,426 @@
     Layout = null;
 }
 
-<div>
-    <div class="align-inline ">
-        <div >
-            <label>Audit Type</label>
-        </div>
-        <div class="dropdown-content">
-            <select ng-model="selectAuditType" ng-change="loadDynamicControls()">
-                <option value="">-- Select AuditType --</option>
-                <option ng-repeat="auditType in auditTypes"  value="{{auditType.AuditId}}">{{auditType.AuditName}}</option>
-            </select>
-        </div>
-    </div>
+@System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+@System.Web.Optimization.Scripts.Render("~/Scripts/BlockUI")
+@System.Web.Optimization.Scripts.Render("~/Scripts/MultiSelect")
+<div class="pageHeader">
+    New Audit Job
 </div>
 
+<div class="form">
+    <div class="container">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2">Select Audit Type:</label>
+                <div class="col-sm-4">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle " type="button" data-toggle="dropdown">
+                            {{selectedAuditJob}}
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a ng-click="loadDynamicControls('Select Audit Job')"></a></li>
+                            <li ng-repeat="auditType in auditDTOList">
+                                <a ng-model="selectedAuditJob" ng-click="loadDynamicControls(auditType)">{{auditType.AuditName}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
+            <div ng-hide="hideDynamicControl" class="form-group">
+                <label class="control-label col-sm-2">{{paramaterLabel}}</label>
+                <div class="col-sm-4">
+                    <ng-include id="ngInclude" ng-controller="AuditController" onload="item = auditParameterValuesList" src="tpl.contentUrl"></ng-include>
+                </div>
+            </div>
+            <div ng-hide="hideDynamicControl" class="form-group">
+                <div class="col-sm-2 scheduler">
+                    <div>
+                        <input type="radio" name="checkboxes[249]" id="frm-test-elm-120-1" autocomplete="off" checked />
+                        <div class="btn-group">
+                            <label for="frm-test-elm-120-1" class="btn btn-default">
+                                <span class="fa fa-check-circle-o fa-lg"></span>
+                                <span class="fa fa-circle-o fa-lg"></span>
+                            </label>
+                        </div>
+                        <label class="control-label" for="frm-test-elm-120-2">One Time </label>
+                    </div>
+                    <div>
+                        <input type="radio" name="checkboxes[249]" id="frm-test-elm-120-2" autocomplete="off" />
+                        <div class="btn-group">
+                            <label for="frm-test-elm-120-2" class="btn btn-default">
+                                <span class="fa fa-check-circle-o fa-lg"></span>
+                                <span class="fa fa-circle-o fa-lg"></span>
+                            </label>
+                        </div>
+                        <label class="control-label" for="frm-test-elm-120-2">Daily</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="checkboxes[249]" id="frm-test-elm-120-3" autocomplete="off" />
+                        <div class="btn-group">
+                            <label for="frm-test-elm-120-3" class="btn btn-default">
+                                <span class="fa fa-check-circle-o fa-lg"></span>
+                                <span class="fa fa-circle-o fa-lg"></span>
+                            </label>
+                        </div>
+                        <label class="control-label" for="frm-test-elm-120-2">Weekly</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="checkboxes[249]" id="frm-test-elm-120-4" autocomplete="off" />
+                        <div class="btn-group">
+                            <label for="frm-test-elm-120-4" class="btn btn-default">
+                                <span class="fa fa-check-circle-o fa-lg"></span>
+                                <span class="fa fa-circle-o fa-lg"></span>
+                            </label>
+                        </div>
+                        <label class="control-label" for="frm-test-elm-120-2">Monthly</label>
+                    </div>
+                </div>
+                <div class="col-sm-8 scheduler-right">
+                    <div class="form-group row scheduler-right">
+                        <label class="control-label col-sm-2">Start:</label>
+                        <div class="col-sm-2">
+                            <div class='input-group date' id='datetimepicker1'>
+                                <input type='text' class="form-control" />
+                                @*<span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>*@
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group row scheduler-right">
+                        <label class="control-label col-sm-2">Recur Every:</label>
+                        <div class="col-sm-2">
+                            <input type='text' class="form-control input-three-digit" />
+                        </div>
+                        <label class="control-label col-sm-2">days</label>
+                    </div>
+                    <div class="form-group row scheduler scheduler-right">
+                        <div class="col col-sm-6 days-week">
+                            <input type="checkbox" name="checkboxes[100-0]" id="frm-test-elm-100-0" autocomplete="off" />
+                            <div class="btn-group">
+                                <label for="frm-test-elm-100-0" class="btn btn-default">
+                                    <span class="fa fa-check-square-o fa-lg"></span>
+                                    <span class="fa fa-square-o fa-lg"></span>
+                                    <span class="content">Sunday</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col col-sm-6 days-week">
+                            <input type="checkbox" name="checkboxes[100-0]" id="frm-test-elm-100-1" autocomplete="off" />
+                            <div class="btn-group">
+                                <label for="frm-test-elm-100-1" class="btn btn-default">
+                                    <span class="fa fa-check-square-o fa-lg"></span>
+                                    <span class="fa fa-square-o fa-lg"></span>
+                                    <span class="content">Monday</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col col-sm-6 days-week">
+                            <input type="checkbox" name="checkboxes[100-0]" id="frm-test-elm-100-2" autocomplete="off" />
+                            <div class="btn-group">
+                                <label for="frm-test-elm-100-2" class="btn btn-default">
+                                    <span class="fa fa-check-square-o fa-lg"></span>
+                                    <span class="fa fa-square-o fa-lg"></span>
+                                    <span class="content">Tuesday</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col col-sm-6 days-week">
+                            <input type="checkbox" name="checkboxes[100-0]" id="frm-test-elm-100-3" autocomplete="off" />
+                            <div class="btn-group">
+                                <label for="frm-test-elm-100-3" class="btn btn-default">
+                                    <span class="fa fa-check-square-o fa-lg"></span>
+                                    <span class="fa fa-square-o fa-lg"></span>
+                                    <span class="content">Wednesday</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row scheduler scheduler-right">
+                        <div class="col col-sm-6 days-week">
+                            <input type="checkbox" name="checkboxes[100-0]" id="frm-test-elm-100-4" autocomplete="off" />
+                            <div class="btn-group">
+                                <label for="frm-test-elm-100-4" class="btn btn-default">
+                                    <span class="fa fa-check-square-o fa-lg"></span>
+                                    <span class="fa fa-square-o fa-lg"></span>
+                                    <span class="content">Thursday</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col col-sm-6 days-week">
+                            <input type="checkbox" name="checkboxes[100-0]" id="frm-test-elm-100-5" autocomplete="off" />
+                            <div class="btn-group">
+                                <label for="frm-test-elm-100-5" class="btn btn-default">
+                                    <span class="fa fa-check-square-o fa-lg"></span>
+                                    <span class="fa fa-square-o fa-lg"></span>
+                                    <span class="content">Friday</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col col-sm-6 days-week">
+                            <input type="checkbox" name="checkboxes[100-0]" id="frm-test-elm-100-6" autocomplete="off" />
+                            <div class="btn-group">
+                                <label for="frm-test-elm-100-6" class="btn btn-default">
+                                    <span class="fa fa-check-square-o fa-lg"></span>
+                                    <span class="fa fa-square-o fa-lg"></span>
+                                    <span class="content">Saturday</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row  scheduler-right">
+                        <label class="control-label col-sm-2">Months:</label>
+                        <div class="col-sm-4">
+                            <select id="demo" multiple="multiple">
+                                <option value="Jan">January</option>
+                                <option value="Feb">February</option>
+                                <option value="Mar">March</option>
+                                <option value="Apr">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="Jul">July</option>
+                                <option value="Aug">August</option>
+                                <option value="Sep">September</option>
+                                <option value="Oct">October</option>
+                                <option value="Nov">November</option>
+                                <option value="Dec">Decemeber</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="divDays" class="form-group row  scheduler-right">
+                        <label class="control-label col-sm-2">Days:</label>
+                        <div class="col-sm-4">
+                            <select id="days" multiple="multiple">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row  scheduler-right">
+                        <label class="control-label col-sm-2">On:</label>
+                        <div class="col-sm-4">
+                            <select id="numbers" multiple="multiple">
+                                <option value="First">First</option>
+                                <option value="Second">Second</option>
+                                <option value="Third">Third</option>
+                                <option value="Fourth">Fourth</option>
+                                <option value="Last">Last</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <select id="weekDays" multiple="multiple">
+                                <option value="Sunday">Sunday</option>
+                                <option value="Monday">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                                <option value="Wednesday">Wednesday</option>
+                                <option value="Thursday">Thursday</option>
+                                <option value="Friday">Friday</option>
+                                <option value="Saturday">Saturday</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </div>
+</div>
+<link href="~/Content/bootstrap-multiselect.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<style type="text/css">
+    /* Checkbox and Radio buttons */
+    .scheduler input[type="radio"],
+    .scheduler input[type="checkbox"] {
+        display: none;
+    }
+
+        .scheduler input[type="checkbox"] + .btn-group > label,
+        .scheduler input[type="radio"] + .btn-group > label {
+            white-space: normal;
+        }
+
+            .scheduler input[type="checkbox"] + .btn-group > label.btn-default,
+            .scheduler input[type="radio"] + .btn-group > label.btn-default {
+                color: #333;
+                background-color: #fff;
+                border-color: #ccc;
+            }
+
+            .scheduler input[type="checkbox"] + .btn-group > label.btn-primary,
+            .scheduler input[type="radio"] + .btn-group > label.btn-primary {
+                color: #fff;
+                background-color: #428bca;
+                border-color: #357ebd;
+            }
+
+            .scheduler input[type="checkbox"] + .btn-group > label.btn-success,
+            .scheduler input[type="radio"] + .btn-group > label.btn-success {
+                color: #fff;
+                background-color: #5cb85c;
+                border-color: #4cae4c;
+            }
+
+            .scheduler input[type="checkbox"] + .btn-group > label.btn-info,
+            .scheduler input[type="radio"] + .btn-group > label.btn-info {
+                color: #fff;
+                background-color: #5bc0de;
+                border-color: #46b8da;
+            }
+
+            .scheduler input[type="checkbox"] + .btn-group > label.btn-warning,
+            .scheduler input[type="radio"] + .btn-group > label.btn-warning {
+                color: #fff;
+                background-color: #f0ad4e;
+                border-color: #eea236;
+            }
+
+            .scheduler input[type="checkbox"] + .btn-group > label.btn-danger,
+            .scheduler input[type="radio"] + .btn-group > label.btn-danger {
+                color: #fff;
+                background-color: #d9534f;
+                border-color: #d43f3a;
+            }
+
+            .scheduler input[type="checkbox"] + .btn-group > label.btn-link,
+            .scheduler input[type="radio"] + .btn-group > label.btn-link {
+                font-weight: normal;
+                color: #428bca;
+                border-radius: 0;
+            }
+
+            .scheduler input[type="radio"] + .btn-group > label span:first-child,
+            .scheduler input[type="checkbox"] + .btn-group > label span:first-child {
+                display: none;
+            }
+
+                .scheduler input[type="radio"] + .btn-group > label span:first-child + span,
+                .scheduler input[type="checkbox"] + .btn-group > label span:first-child + span {
+                    display: inline-block;
+                }
+
+        .scheduler input[type="radio"]:checked + .btn-group > label span:first-child,
+        .scheduler input[type="checkbox"]:checked + .btn-group > label span:first-child {
+            display: inline-block;
+        }
+
+            .scheduler input[type="radio"]:checked + .btn-group > label span:first-child + span,
+            .scheduler input[type="checkbox"]:checked + .btn-group > label span:first-child + span {
+                display: none;
+            }
+
+        .scheduler input[type="checkbox"] + .btn-group > label span[class*="fa-"],
+        .scheduler input[type="radio"] + .btn-group > label span[class*="fa-"] {
+            width: 15px;
+            float: left;
+            margin: 4px 0 2px -2px;
+        }
+
+        .scheduler input[type="checkbox"] + .btn-group > label span.content,
+        .scheduler input[type="radio"] + .btn-group > label span.content {
+            margin-left: 10px;
+        }
+
+    .scheduler {
+        border-right: 1px solid black;
+        padding: 15px;
+    }
+
+    .scheduler-right {
+        padding: 0px;
+        margin-left: 25px;
+        border-right: 0px solid black;
+        margin-bottom: 5px;
+    }
+
+        .scheduler-right .col-sm-4 {
+            padding-right: 0;
+            padding-left: 5px;
+            width: 165px;
+        }
+
+        .scheduler-right .col-sm-6 {
+            padding-right: 0;
+            padding-left: 5px;
+        }
+
+        .scheduler-right .col-sm-2 {
+            padding-right: 0;
+            padding-left: 5px;
+        }
+
+    .input-three-digit {
+        width: 100%;
+    }
+
+    .days-week {
+        width: 135px;
+    }
+
+        .days-week .btn-default {
+            width: 130px;
+        }
+
+    #divDays > div > span > div > ul > li {
+        float: left;
+        display: inline;
+    }
+    /* End::Checkbox and Radio buttons */
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#demo').multiselect({
+            includeSelectAllOption: true,
+            maxHeight: 200,
+             nonSelectedText: 'Select Month'
+        });
+
+         $('#days').multiselect({
+          includeSelectAllOption: true,
+            maxHeight: 200,
+            buttonWidth: "324px",
+             nonSelectedText: 'Select Date'
+        });
+
+         $('#numbers').multiselect({
+          includeSelectAllOption: true
+        });
+         $('#weekDays').multiselect({
+          includeSelectAllOption: true,
+          nonSelectedText: 'Select Day'
+        });
+
+    });
+
+</script>

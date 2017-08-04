@@ -12,7 +12,7 @@ namespace BallyTech.UI.Web.Platform
         /// <summary>
         /// Creates Asset API Service Instance.
         /// </summary>
-        public static IApplicationHelper Asset
+        public static IApplicationHelper ApplicationHelper
         {
             get
             {

@@ -18,8 +18,11 @@
               .when("/ProductSetting", {
                   templateUrl: "/Product/Index",
                   controller: "ProductController"
-              })
-              .when("/blue", {
+              })    
+              .when("/ViewAudit", {
+                  templateUrl: "/Audit/ViewAuditJobs",
+                  controller: "AuditController"
+              }).when("/blue", {
                   templateUrl: "blue.htm"
               })
     }]);
