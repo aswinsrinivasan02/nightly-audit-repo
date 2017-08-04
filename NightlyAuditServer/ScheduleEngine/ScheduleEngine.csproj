@@ -7,8 +7,8 @@
     <ProjectGuid>{00BDD780-24DB-4CED-B6E6-A25D8D9B6E7D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScheduleEngine</RootNamespace>
-    <AssemblyName>ScheduleEngine</AssemblyName>
+    <RootNamespace>SG.NightlyAudit.ScheduleEngine</RootNamespace>
+    <AssemblyName>SG.NightlyAudit.ScheduleEngine</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

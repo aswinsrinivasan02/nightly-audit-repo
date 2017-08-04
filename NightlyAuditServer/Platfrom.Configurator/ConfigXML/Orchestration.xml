@@ -22,11 +22,20 @@
     </WorkItemInvocation>
   </WorkflowConfiguration>
 
-  <WorkflowConfiguration name="GetAuditJob" startSequenceId ="1" exceptionPolicy="Default">
+  <WorkflowConfiguration name="GetAudits" startSequenceId ="1" exceptionPolicy="Default">
     <WorkItemInvocation>
-      <InvokeSequence sequenceId="1" name="GetAuditJob" transactionContext="Requires" commitInvoke="OnCompletion" breakOnFailure="OnFailure" responseKey="OUTPUT" exceptionPolicy="Default">
+      <InvokeSequence sequenceId="1" name="GetAudits" transactionContext="Requires" commitInvoke="OnCompletion" breakOnFailure="OnFailure" responseKey="OUTPUT" exceptionPolicy="Default">
       </InvokeSequence>
     </WorkItemInvocation>
   </WorkflowConfiguration>
   
+  <WorkflowConfiguration name="SaveJob" startSequenceId ="1" exceptionPolicy="Default">
+    <WorkItemInvocation>
+      <InvokeSequence sequenceId="1" name="SaveJob" transactionContext="Requires" commitInvoke="OnCompletion" breakOnFailure="OnFailure" responseKey="SCHEDULEJOB" exceptionPolicy="Default">
+        <Antecedent sequenceId="2" execution="Synchronous" invocation="OnSuccess" />
+      </InvokeSequence>
+      <InvokeSequence sequenceId="2" name="ScheduleJob" transactionContext="Requires" commitInvoke="OnCompletion" breakOnFailure="OnFailure" responseKey="OUTPUT" exceptionPolicy="Default">
+      </InvokeSequence>
+    </WorkItemInvocation>
+  </WorkflowConfiguration>
 </Orchestration>

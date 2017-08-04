@@ -3,7 +3,7 @@ using Quartz.Impl;
 using System;
 using SG.NightlyAudit.Domain;
 
-namespace ScheduleEngine
+namespace SG.NightlyAudit.ScheduleEngine
 {
     public class ScheduleEngine
     {
@@ -32,14 +32,29 @@ namespace ScheduleEngine
 
         public void AddJobForSchedule(Job scheduleObject)
         {
-            IJobDetail jobDetail = JobBuilder.Create<JobClass>().WithIdentity(scheduleObject.AuditId.ToString())
-                                    .UsingJobData("JobId", scheduleObject.AuditId).Build();
+            if (scheduleObject.IsEnabled)
+            {
+                IJobDetail jobDetail = JobBuilder.Create<JobClass>().WithIdentity(scheduleObject.JobId.ToString())
+                                        .UsingJobData("JobId", scheduleObject.JobId).Build();
 
-            this.scheduler.DeleteJob(new JobKey(scheduleObject.AuditId.ToString()));
+                this.scheduler.DeleteJob(new JobKey(scheduleObject.JobId.ToString()));
 
-            string cronExpression = scheduleObject.CronExpression;
-            ITrigger trigger = TriggerBuilder.Create().StartAt(new DateTimeOffset(scheduleObject.StartDateTime)).WithCronSchedule(cronExpression).Build();
-            scheduler.ScheduleJob(jobDetail, trigger);
+                string cronExpression = scheduleObject.CronExpression;
+
+                if (cronExpression != string.Empty)
+                {
+                    ITrigger trigger = TriggerBuilder.Create().StartAt(new DateTimeOffset(scheduleObject.StartDateTime)).WithCronSchedule(cronExpression).Build();
+                    scheduler.ScheduleJob(jobDetail, trigger);
+                }
+                else
+                {
+                    //Simple Trigger for one time run.
+                }
+            }
+            else
+            {
+                this.scheduler.DeleteJob(new JobKey(scheduleObject.JobId.ToString()));
+            }
         }
     }
 

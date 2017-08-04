@@ -17,6 +17,7 @@ namespace SG.NightlyAudit.Persistance
             diContainer.Register<IAuditHistoryRepository>(new AuditHistoryRepository(serviceProvider));
             diContainer.Register<IProductRepository>(new ProductRepository(serviceProvider));
             diContainer.Register<IAuditJobRepository>(new AuditJobRepository(serviceProvider));
+            diContainer.Register<IJobRepository>(new JobRepository(serviceProvider));
 
             diContainer.Register<IRangeGenerator<int>>(new RangeGenerator<int>(diContainer.Get<IIDRangeRepository>()));
             diContainer.Register<IRangeGenerator<long>>(new RangeGenerator<long>(diContainer.Get<IIDRangeRepository>()));

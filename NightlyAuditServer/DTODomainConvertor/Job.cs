@@ -29,7 +29,7 @@ namespace SG.NightlyAudit.DTODomainConvertor
             return jobDTO;
         }
 
-        public static Job GetJob(JobDTO jobDTO)
+        public static Job GetJobEntity(JobDTO jobDTO)
         {
             Job jobEntity = new Job();
             jobEntity.JobId = jobDTO.JobId;
@@ -42,7 +42,12 @@ namespace SG.NightlyAudit.DTODomainConvertor
             jobSchedule.JobId = jobDTO.JobId;
             jobSchedule.ScheduleType = (int)jobDTO.ScheduleObject.ScheduleType;
             jobSchedule.StartDateTime = jobDTO.ScheduleObject.StartDateTime;
-
+            jobSchedule.ReoccurEveryX = jobDTO.ScheduleObject.ReoccurEveryX;
+            jobSchedule.SelectedDates = jobDTO.ScheduleObject.SelectedDates;
+            jobSchedule.SelectedDays = jobDTO.ScheduleObject.SelectedDays;
+            jobSchedule.SelectedMonths = jobDTO.ScheduleObject.SelectedMonths;
+            jobSchedule.SelectedOnWeek = jobDTO.ScheduleObject.SelectedOnWeek;
+            jobEntity.JobSchedule = jobSchedule;
             return jobEntity;
 
         }

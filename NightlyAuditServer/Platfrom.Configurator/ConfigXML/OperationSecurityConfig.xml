@@ -3,6 +3,7 @@
   <OperationSecurity APIName="AuthenticateUser" IsSessionRequired="false" />
   <OperationSecurity APIName="GetAllProducts" IsSessionRequired="false" />
   <OperationSecurity APIName="UpdateProduct" IsSessionRequired="false" />
-  <OperationSecurity APIName="GetAuditJob" IsSessionRequired="false" />
+  <OperationSecurity APIName="GetAudits" IsSessionRequired="false" />
+  <OperationSecurity APIName="SaveJob" IsSessionRequired="false" />
 
 </OperationSecurityConfiguration>

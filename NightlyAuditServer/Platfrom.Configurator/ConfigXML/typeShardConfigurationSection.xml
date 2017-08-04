@@ -4,5 +4,6 @@
   <TypeShardElement TypeName="Products" ShardHashProviderTypeName="SG.NightlyAudit.Utilities.ShardHashProvider, SG.NightlyAudit.Utilities" />
   <TypeShardElement TypeName="IDRange" ShardHashProviderTypeName="SG.NightlyAudit.Utilities.ShardHashProvider, SG.NightlyAudit.Utilities" />
   <TypeShardElement TypeName="AuditJob" ShardHashProviderTypeName="SG.NightlyAudit.Utilities.ShardHashProvider, SG.NightlyAudit.Utilities" />
+  <TypeShardElement TypeName="Job" ShardHashProviderTypeName="SG.NightlyAudit.Utilities.ShardHashProvider, SG.NightlyAudit.Utilities" />
 
 </TypeShardConfigurationSection>

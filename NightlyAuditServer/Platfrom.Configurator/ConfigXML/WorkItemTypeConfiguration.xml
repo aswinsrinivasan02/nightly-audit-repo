@@ -3,6 +3,8 @@
   <WorkItemConfig name="AuthenticateUser" type="NightlyAuditServer.Workflow.AuthenticateUser, NightlyAuditServer.Workflow" />
   <WorkItemConfig name="GetAllProducts" type="NightlyAuditServer.Workflow.GetAllProducts, NightlyAuditServer.Workflow" />
   <WorkItemConfig name="UpdateProduct" type="NightlyAuditServer.Workflow.UpdateProduct, NightlyAuditServer.Workflow" />
-  <WorkItemConfig name="GetAuditJob" type="NightlyAuditServer.Workflow.GetAuditJob, NightlyAuditServer.Workflow" />
+  <WorkItemConfig name="GetAudits" type="NightlyAuditServer.Workflow.GetAudits, NightlyAuditServer.Workflow" />
+  <WorkItemConfig name="ScheduleJob" type="NightlyAuditServer.Workflow.ScheduleJob, NightlyAuditServer.Workflow" />
+  <WorkItemConfig name="SaveJob" type="NightlyAuditServer.Workflow.SaveJob, NightlyAuditServer.Workflow" />
 
 </WorkItemTypeConfiguration>

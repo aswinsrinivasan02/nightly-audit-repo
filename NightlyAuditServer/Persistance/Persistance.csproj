@@ -46,6 +46,7 @@
     <Compile Include="AuditJobRepository.cs" />
     <Compile Include="Configurator.cs" />
     <Compile Include="IDGen\IDRangeRepository.cs" />
+    <Compile Include="JobRepository.cs" />
     <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

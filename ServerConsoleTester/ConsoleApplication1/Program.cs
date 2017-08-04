@@ -25,7 +25,6 @@ namespace ConsoleApplication1
             if (uri.Contains("{{ServerIP}}") == false)
             {
                 iServiceProvider.Configuration.Save("HttpClient", "PlatformRESTApi", string.Format("http://{0}:9955/", uri));
-                
             }
 
             var restHostingProvider = hostingProvider.GetRESTHostingProvider("PlatformRESTApi");
@@ -42,6 +41,8 @@ namespace ConsoleApplication1
                 Console.WriteLine("2. UpdateProducts");
                 Console.WriteLine("3. GetAllAuditJobs");
                 Console.WriteLine("4. GetAuditJobById");
+                Console.WriteLine("5. SaveJob");
+
                 Console.WriteLine("99. Exit");
 
                 string choice = Console.ReadLine();
@@ -59,6 +60,9 @@ namespace ConsoleApplication1
                         int auditId = Convert.ToInt32(Console.ReadLine());
                         GetAllAuditJobs(auditId);
                         break;
+                    case "5":
+                        SaveJob();
+                        break;
                     case "99":
                         isbreak = true;
                         break;
@@ -71,8 +75,20 @@ namespace ConsoleApplication1
 
         static void GetAllAuditJobs(int auditId = 0)
         {
-           // List<AuditJobDTO> auditJob = applicationHelper.GetAuditJob(auditId);
+         //   List<AuditJobDTO> auditJob = applicationHelper.GetAuditJob(auditId);
             
+        }
+
+        static void SaveJob()
+        {
+            JobDTO jobDTO = new JobDTO();
+            jobDTO.AuditId = 1;
+            jobDTO.ParametersChosen = "Casino,Location";
+            ScheduleObject schObj = new ScheduleObject();
+            schObj.ScheduleType = SchedulingTypes.OneTime;
+            schObj.StartDateTime = DateTime.Now;
+            jobDTO.ScheduleObject = schObj;
+            applicationHelper.SaveJob(jobDTO);
         }
 
         

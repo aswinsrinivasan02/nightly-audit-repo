@@ -19,7 +19,7 @@ namespace SG.NightlyAudit.Persistence.MSSql.QueryBuilder
             {
                 case "GetAllAuditJobs":
                 default:
-                    sqlCommand.CommandText = "spGetAuditJobs";
+                    sqlCommand.CommandText = "spGetAudits";
                     break;
             }
             return sqlCommand;
@@ -28,7 +28,7 @@ namespace SG.NightlyAudit.Persistence.MSSql.QueryBuilder
         public SqlCommand Create(int aggregateId)
         {
             SqlCommand sqlCommand = new SqlCommand();
-            sqlCommand.CommandText = "spGetAuditJobById";
+            sqlCommand.CommandText = "spGetAuditsById";
             sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
             sqlCommand.Parameters.Add(new SqlParameter("@AuditId", aggregateId));
             return sqlCommand;

@@ -44,8 +44,9 @@
   <ItemGroup>
     <Compile Include="ApplicationHelper\AuthenticateEmployee.cs" />
     <Compile Include="ApplicationHelper\GetAllProducts.cs" />
-    <Compile Include="ApplicationHelper\GetAuditJob.cs" />
+    <Compile Include="ApplicationHelper\GetAudits.cs" />
     <Compile Include="ApplicationHelper\SaveAuditJob.cs" />
+    <Compile Include="ApplicationHelper\ScheduleJob.cs" />
     <Compile Include="ApplicationHelper\UpdateProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,6 +62,10 @@
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{d872a0ab-af23-4206-8d0a-4813577526a3}</Project>
       <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScheduleEngine\ScheduleEngine.csproj">
+      <Project>{00bdd780-24db-4ced-b6e6-a25d8d9b6e7d}</Project>
+      <Name>ScheduleEngine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

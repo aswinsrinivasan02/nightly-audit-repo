@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9CAC1326-DFFB-4D31-9B41-72B6DF46CFC2}</ProjectGuid>
+    <ProjectGuid>{A3049053-B5D3-4BDE-B738-D0C79CD1F9A1}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ConsoleApplication1</RootNamespace>
@@ -35,12 +35,6 @@
     <Reference Include="BallyTech.Infrastructure.Hosting, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL" />
     <Reference Include="BallyTech.Infrastructure.Provider, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL" />
     <Reference Include="BallyTech.Infrastructure.Utilities, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c03530e9d763a944, processorArchitecture=MSIL" />
-    <Reference Include="NightlyAuditAPI.Contract">
-      <HintPath>..\..\NightlyAuditServer\NightlyAuditAPI.Contract\bin\Debug\NightlyAuditAPI.Contract.dll</HintPath>
-    </Reference>
-    <Reference Include="SG.NightlyAudit.DTO">
-      <HintPath>..\..\NightlyAuditServer\DTO\bin\Debug\SG.NightlyAudit.DTO.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -58,6 +52,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{d872a0ab-af23-4206-8d0a-4813577526a3}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NightlyAuditAPI.Contract\NightlyAuditAPI.Contract.csproj">
+      <Project>{e92132f6-edb6-41f7-8212-10ec0479d812}</Project>
+      <Name>NightlyAuditAPI.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlatformService\PlatformServices.csproj">
+      <Project>{bf5ee2cc-875f-4708-994e-e156b59da200}</Project>
+      <Name>PlatformServices</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

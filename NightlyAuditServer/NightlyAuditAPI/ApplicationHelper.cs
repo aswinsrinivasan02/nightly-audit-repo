@@ -26,17 +26,17 @@ namespace NightlyAuditAPI
                 this.workflowService, this.utility, productDTO);
         }
 
-        public List<AuditDTO> GetAuditJob(int jobId)
+        public List<AuditDTO> GetAudits(int jobId)
         {
             return WorkflowInvoker.Invoke<int, List<AuditDTO>>(
-                         "GetAuditJob",
+                         "GetAudits",
                          this.workflowService, this.utility, jobId);
         }
 
-        public bool SaveAuditJob(JobDTO jobDTO)
+        public bool SaveJob(JobDTO jobDTO)
         {
             return WorkflowInvoker.Invoke<JobDTO, bool>(
-                "SaveAuditJob", this.workflowService, this.utility, jobDTO);
+                "SaveJob", this.workflowService, this.utility, jobDTO);
         }
     }
 }

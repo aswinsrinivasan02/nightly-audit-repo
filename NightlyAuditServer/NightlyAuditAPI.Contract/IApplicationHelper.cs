@@ -21,11 +21,11 @@ namespace NightlyAuditAPI.Contract
         bool UpdateProduct(ProductDTO productDTO);
 
         [OperationContract]
-        [Operation("GetAuditJob", OperationType.GET)]
-        List<AuditDTO> GetAuditJob(int auditId);
+        [Operation("GetAudits", OperationType.GET)]
+        List<AuditDTO> GetAudits(int auditId);
 
         [OperationContract]
-        [Operation("SaveAuditJob", OperationType.POST)]
-        bool SaveAuditJob(JobDTO jobDTO);
+        [Operation("SaveJob", OperationType.POST)]
+        bool SaveJob(JobDTO jobDTO);
     }
 }
