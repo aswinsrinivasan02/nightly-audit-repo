@@ -58,14 +58,14 @@
                     <div ng-hide="hideDynamicControl" class="form-group">
                         <div class="col-sm-2 scheduler">
                             <div>
-                                <input type="radio" ng-click="showScheduler('showOneTime')" name="checkboxes[249]" id="frm-test-elm-120-1" checked />
+                                <input type="radio" ng-click="showScheduler('showHourly')" name="checkboxes[249]" id="frm-test-elm-120-1" checked />
                                 <div class="btn-group">
                                     <label for="frm-test-elm-120-1" class="btn btn-default">
                                         <span class="fa fa-check-circle-o fa-lg"></span>
                                         <span class="fa fa-circle-o fa-lg"></span>
                                     </label>
                                 </div>
-                                <label class="control-label" for="frm-test-elm-120-1">One Time </label>
+                                <label class="control-label" for="frm-test-elm-120-1">Hourly</label>
                             </div>
                             <div>
                                 <input ng-click="showScheduler('showDaily')" type="radio" name="checkboxes[249]" id="frm-test-elm-120-2" autocomplete="off" />
@@ -98,25 +98,39 @@
                                 <label class="control-label" for="frm-test-elm-120-4">Monthly</label>
                             </div>
                         </div>
-                        <div class="col-sm-8 scheduler-right">
-                            <div class="form-group row scheduler-right">
-                                <label class="control-label col-sm-2">Start:</label>
-                                <div class="col-sm-2">
-                                    <div class='input-group date' id='datetimepicker'>
-                                        <input type='text' class="form-control" />
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </span>
+                        <div class="col-sm-10 scheduler-right">
+                            <div ng-show="showHourlyDaily" class="form-group row scheduler-right">
+                                <div class="scheduler scheduler-month col-sm-2">
+                                    <input type="radio" ng-click="showScheduler('Days')" name="checkboxes[251]" id="frm-test-elm-120-recurrence" autocomplete="off" checked />
+                                    <div class="btn-group">
+                                        <label for="frm-test-elm-120-recurrence" class="btn btn-default">
+                                            <span class="fa fa-check-circle-o fa-lg"></span>
+                                            <span class="fa fa-circle-o fa-lg"></span>
+                                        </label>
                                     </div>
-
+                                    <div class="col-sm-2">
+                                        <label class="control-label col-sm-2">Every</label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div ng-show="showDaily" class="form-group row scheduler-right">
-                                <label class="control-label col-sm-2">Recur Every:</label>
                                 <div class="col-sm-2">
                                     <input type='text' class="form-control input-three-digit" />
                                 </div>
-                                <label class="control-label col-sm-2">{{recurrenceText}}</label>
+                                <div class="col-sm-2">
+                                    <label class="form-control col-sm-2">{{recurrenceText}}</label>
+                                </div>
+                            </div>
+                            <div ng-show="showDaily" class="form-group row scheduler-right">
+                                <div class="scheduler scheduler-month col-sm-2">
+                                    <input type="radio" ng-click="showScheduler('Days')" name="checkboxes[251]" id="frm-test-elm-120-week-day" autocomplete="off" />
+                                    <div class="btn-group">
+                                        <label for="frm-test-elm-120-week-day" class="btn btn-default">
+                                            <span class="fa fa-check-circle-o fa-lg"></span>
+                                            <span class="fa fa-circle-o fa-lg"></span>
+                                        </label>
+                                    </div><div class="col-sm-2">
+                                        <label class="control-label col-sm-4">Every Week Day</label>
+                                    </div>
+                                </div>
                             </div>
                             <div ng-show="showWeekly" class="form-group row scheduler scheduler-right">
                                 <div class="col col-sm-6 days-week">
@@ -192,27 +206,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-show="showMonthly" class="form-group row  scheduler-right">
-                                <label class="control-label col-sm-2">Months:</label>
-                                <div class="col-sm-4">
-                                    <select id="months" multiple="multiple">
-                                        <option value="Jan">January</option>
-                                        <option value="Feb">February</option>
-                                        <option value="Mar">March</option>
-                                        <option value="Apr">April</option>
-                                        <option value="May">May</option>
-                                        <option value="June">June</option>
-                                        <option value="Jul">July</option>
-                                        <option value="Aug">August</option>
-                                        <option value="Sep">September</option>
-                                        <option value="Oct">October</option>
-                                        <option value="Nov">November</option>
-                                        <option value="Dec">Decemeber</option>
-                                    </select>
-                                </div>
-                            </div>
+
                             <div ng-show="showMonthly" id="divDays" class="form-group row  scheduler-right">
-                                <div class="scheduler scheduler-month col-sm-2">
+                                <div class="scheduler scheduler-month col-sm-10">
                                     <input type="radio" ng-click="showScheduler('Days')" name="checkboxes[250]" id="frm-test-elm-120-days" autocomplete="off" checked />
                                     <div class="btn-group">
                                         <label for="frm-test-elm-120-days" class="btn btn-default">
@@ -220,48 +216,64 @@
                                             <span class="fa fa-circle-o fa-lg"></span>
                                         </label>
                                     </div>
-                                    <label class="control-label" for="frm-test-elm-120-days">Days:</label>
-                                </div>
-                                <div ng-class="{'disabled':isApplyClassDays}" id="divDays">
-                                    <div class="col-sm-4">
-                                        <select id="days" multiple="multiple">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">16</option>
-                                            <option value="17">17</option>
-                                            <option value="18">18</option>
-                                            <option value="19">19</option>
-                                            <option value="20">20</option>
-                                            <option value="21">21</option>
-                                            <option value="22">22</option>
-                                            <option value="23">23</option>
-                                            <option value="24">24</option>
-                                            <option value="25">25</option>
-                                            <option value="26">26</option>
-                                            <option value="27">27</option>
-                                            <option value="28">28</option>
-                                            <option value="29">29</option>
-                                            <option value="30">30</option>
-                                            <option value="31">31</option>
-                                        </select>
+                                    <div class="col-sm-1">
+                                        <label class="control-label " for="frm-test-elm-120-days">Day</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input class="form-control " type="text" />
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label class="control-label ">of every </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input class="form-control " type="text" />
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label class="control-label ">months</label>
                                     </div>
                                 </div>
+
+
+                                @*<div ng-class="{'disabled':isApplyClassDays}" id="divDays">
+                                        <div class="col-sm-4">
+                                            <select id="days" multiple="multiple">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                            </select>
+                                        </div>
+                                    </div>*@
                             </div>
                             <div ng-show="showMonthly" class="form-group row  scheduler-right">
-                                <div class="scheduler scheduler-month col-sm-2">
+                                <div class="scheduler scheduler-month col-sm-10">
                                     <input type="radio" ng-click="showScheduler('On')" name="checkboxes[250]" id="frm-test-elm-120-on" autocomplete="off" />
                                     <div class="btn-group">
                                         <label for="frm-test-elm-120-on" class="btn btn-default">
@@ -269,12 +281,11 @@
                                             <span class="fa fa-circle-o fa-lg"></span>
                                         </label>
                                     </div>
-
-                                    <label class="control-label" for="frm-test-elm-120-on">On:</label>
-                                </div>
-                                <div ng-class="{'disabled':isApplyClassOn}" id="divOn">
+                                    <div class="col-sm-1">
+                                        <label class="control-label" for="frm-test-elm-120-on">On</label>
+                                    </div>
                                     <div class="col-sm-4">
-                                        <select id="numbers" multiple="multiple">
+                                        <select id="numbers">
                                             <option value="First">First</option>
                                             <option value="Second">Second</option>
                                             <option value="Third">Third</option>
@@ -283,7 +294,7 @@
                                         </select>
                                     </div>
                                     <div class="col-sm-4">
-                                        <select id="weekDays" multiple="multiple">
+                                        <select id="weekDays">
                                             <option value="Sunday">Sunday</option>
                                             <option value="Monday">Monday</option>
                                             <option value="Tuesday">Tuesday</option>
@@ -292,6 +303,36 @@
                                             <option value="Friday">Friday</option>
                                             <option value="Saturday">Saturday</option>
                                         </select>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label class="control-label ">of every</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input class="form-control " type="text" />
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label class="control-label ">months</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row scheduler-right">
+                                <div class="scheduler scheduler-month col-sm-2">
+                                    <input ng-show="showHourly" type="radio" ng-click="showScheduler('Days')" name="checkboxes[251]" id="frm-test-elm-120-starts" autocomplete="off" />
+                                    <div ng-show="showHourly" class="btn-group">
+                                        <label for="frm-test-elm-120-starts" class="btn btn-default">
+                                            <span class="fa fa-check-circle-o fa-lg"></span>
+                                            <span class="fa fa-circle-o fa-lg"></span>
+                                        </label>
+                                    </div><div class="col-sm-2">
+                                        <label class="control-label col-sm-4">Starts at</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class='input-group date' id='datetimepicker'>
+                                        <input type='text' class="form-control" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -321,19 +362,6 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
-        $('#months').multiselect({
-            includeSelectAllOption: true,
-            maxHeight: 200,
-            nonSelectedText: 'Select Month'
-        });
-
-        $('#days').multiselect({
-            includeSelectAllOption: true,
-            maxHeight: 200,
-            buttonWidth: "324px",
-            nonSelectedText: 'Select Date'
-        });
-
         $('#numbers').multiselect({
             includeSelectAllOption: true
         });
@@ -342,7 +370,6 @@
             includeSelectAllOption: true,
             nonSelectedText: 'Select Day'
         });
-
 
         $('#datetimepicker').datetimepicker({
 

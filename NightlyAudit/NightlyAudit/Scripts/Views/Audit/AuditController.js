@@ -8,7 +8,8 @@
     getAuditTypes(0);
     $scope.tpl = {};
     $scope.tpl.contentUrl = "";
-    $scope.showDaily = false;
+    $scope.showHourlyDaily = true;
+    $scope.recurrenceText = "days"
     $scope.showWeekly = false;
     $scope.showMonthly = false;
     $scope.isApplyClassOn = true;
@@ -62,43 +63,47 @@
 
         if (showTypeCurrent != null) {
 
-            if (showTypeCurrent == 'showOneTime') {
+            if (showTypeCurrent == 'showHourly') {
+                $scope.showHourlyDaily = true;
+                $scope.showMonthly = false;
+                $scope.showWeekly = false;
+                $scope.recurrenceText = "hour(s)"
                 $scope.showDaily = false;
-                $scope.showWeekly = false;
-                $scope.showMonthly = false;
+                $scope.showHourly = true;
             }
-            else if (showTypeCurrent == 'showDaily') {
-                $scope.showDaily = true;
+            else if (showTypeCurrent == 'showHourlyDaily') {
+
                 $scope.showWeekly = false;
                 $scope.showMonthly = false;
+                $scope.showHourlyDaily = true;
                 $scope.recurrenceText = "days"
+                $scope.showHourly = false;
             }
             else if (showTypeCurrent == 'showWeekly') {
 
-                $scope.showWeekly = true;
-                $scope.showDaily = true;
+
                 $scope.showMonthly = false;
-                $scope.recurrenceText = "weeks on:"
+                $scope.showWeekly = true;
+                $scope.showHourlyDaily = false;
+                $scope.showDaily = false;
+                $scope.showHourly = false;
+
             }
             else if (showTypeCurrent == 'showMonthly') {
 
                 $scope.showWeekly = false;
-                $scope.showDaily = false;
+                $scope.showHourlyDaily = false;
                 $scope.showMonthly = true;
+                $scope.showDaily = false;
+                $scope.showHourly = false;
             }
-            else if (showTypeCurrent == 'showMonthly') {
-
+            else if (showTypeCurrent == 'showDaily') {
+                $scope.showHourlyDaily = true;
+                $scope.showDaily = true;
+                $scope.recurrenceText = "days"
+                $scope.showMonthly = false;
                 $scope.showWeekly = false;
-                $scope.showDaily = false;
-                $scope.showMonthly = true;
-            }
-            else if (showTypeCurrent=='Days') {
-                $scope.isApplyClassDays = false;
-                $scope.isApplyClassOn = true;
-            }
-            else if (showTypeCurrent=='On') {
-                $scope.isApplyClassOn = false;
-                $scope.isApplyClassDays = true;
+                $scope.showHourly = false;
             }
         }
 
@@ -116,3 +121,4 @@ app.service("AuditService", function ($http) {
         return app.Ajax('GET', 'Audit/GetAuditTypes?auditId=' + auditId, '', $http);
     }
 });
+
