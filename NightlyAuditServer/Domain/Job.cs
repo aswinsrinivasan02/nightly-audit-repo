@@ -1,5 +1,6 @@
 ﻿using BallyTech.Infrastructure.Types;
 using System;
+using System.Collections.Generic;
 
 namespace SG.NightlyAudit.Domain
 {
@@ -34,14 +35,12 @@ namespace SG.NightlyAudit.Domain
 
         public DateTime StartDateTime { get; set; }
 
-        public int? ReoccurEveryX { get; set; }
+        public int ReoccurEveryX { get; set; }
 
-        public int? SelectedDays { get; set; }
+        public int ReoccurEveryXMonths { get; set; }
 
-        public int? SelectedMonths { get; set; }
+        public int SelectedWeek { get; set; }
 
-        public int? SelectedOnWeek { get; set; }
-
-        public int? SelectedDates { get; set; }
+        public List<int> SelectedDates { get; set; }
     }
 }
