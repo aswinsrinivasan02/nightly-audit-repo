@@ -16,7 +16,7 @@ namespace Audit.Controllers
         [HttpGet]
         public ActionResult GetAuditTypes(int auditId)
         {
-            List<AuditDTO> auditDTOList = PlatformAPIProxy.ApplicationHelper.GetAuditJob(auditId);
+            List<AuditDTO> auditDTOList = PlatformAPIProxy.ApplicationHelper.GetAudits(auditId);
             return Json(new { auditDetailList = auditDTOList }, JsonRequestBehavior.AllowGet);
         }
 

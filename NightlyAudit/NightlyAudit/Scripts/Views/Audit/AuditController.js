@@ -8,7 +8,11 @@
     getAuditTypes(0);
     $scope.tpl = {};
     $scope.tpl.contentUrl = "";
-
+    $scope.showHourlyDaily = true;
+    $scope.recurrenceText = "days"
+    $scope.showWeekly = false;
+    $scope.showMonthly = false;
+    $scope.isApplyClassOn = true;
     loadFileForNgInclude = function () {
 
         $scope.tpl.contentUrl = '/Audit/LoadPartialView?controlType=' + $scope.parameterType
@@ -34,7 +38,7 @@
                 $scope.parameterType = $scope.auditParameterList.AuditParameters[0].ParameterType;
 
                 $scope.auditParameterValuesList = $scope.auditParameterList.AuditParameters[0].ParameterValues;
-                                
+
                 $scope.hideDynamicControl = false;
 
                 loadFileForNgInclude();
@@ -55,6 +59,56 @@
         }
     };
 
+    $scope.showScheduler = function (showTypeCurrent) {
+
+        if (showTypeCurrent != null) {
+
+            if (showTypeCurrent == 'showHourly') {
+                $scope.showHourlyDaily = true;
+                $scope.showMonthly = false;
+                $scope.showWeekly = false;
+                $scope.recurrenceText = "hour(s)"
+                $scope.showDaily = false;
+                $scope.showHourly = true;
+            }
+            else if (showTypeCurrent == 'showHourlyDaily') {
+
+                $scope.showWeekly = false;
+                $scope.showMonthly = false;
+                $scope.showHourlyDaily = true;
+                $scope.recurrenceText = "days"
+                $scope.showHourly = false;
+            }
+            else if (showTypeCurrent == 'showWeekly') {
+
+
+                $scope.showMonthly = false;
+                $scope.showWeekly = true;
+                $scope.showHourlyDaily = false;
+                $scope.showDaily = false;
+                $scope.showHourly = false;
+
+            }
+            else if (showTypeCurrent == 'showMonthly') {
+
+                $scope.showWeekly = false;
+                $scope.showHourlyDaily = false;
+                $scope.showMonthly = true;
+                $scope.showDaily = false;
+                $scope.showHourly = false;
+            }
+            else if (showTypeCurrent == 'showDaily') {
+                $scope.showHourlyDaily = true;
+                $scope.showDaily = true;
+                $scope.recurrenceText = "days"
+                $scope.showMonthly = false;
+                $scope.showWeekly = false;
+                $scope.showHourly = false;
+            }
+        }
+
+    };
+
 
 
 }]);
@@ -67,3 +121,4 @@ app.service("AuditService", function ($http) {
         return app.Ajax('GET', 'Audit/GetAuditTypes?auditId=' + auditId, '', $http);
     }
 });
+

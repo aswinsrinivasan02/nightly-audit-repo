@@ -236,3 +236,13 @@ nav .btn_rollover {
     /* background-color: white; */
     float: right
 }
+
+.disabled{
+    pointer-events:none;
+    opacity:0.5;
+}
+
+.date
+{
+    width:200px;
+}
