@@ -292,6 +292,7 @@
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\Audit\bootstrap.css" />
+    <Content Include="Content\Audit\dashboardgrid.css" />
     <Content Include="Content\Audit\Login.css" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-multiselect.css" />
@@ -1144,6 +1145,7 @@
     <Content Include="Scripts\Views\Common\AuditLibrary.js" />
     <Content Include="Scripts\Views\AuditLayoutModule.js" />
     <Content Include="Scripts\Views\Audit\AuditController.js" />
+    <Content Include="Scripts\Views\Dashboard\DashboardController.js" />
     <Content Include="Scripts\Views\Product\ProductController.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1169,6 +1171,7 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\_CheckBoxList.cshtml" />
+    <Content Include="Views\DashBoard\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

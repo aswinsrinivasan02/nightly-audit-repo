@@ -57,8 +57,18 @@
                 <div id="configureTask" class="tab-pane fade">
                     <div ng-hide="hideDynamicControl" class="form-group">
                         <div class="col-sm-2 scheduler">
+                            @*<div>
+                                <input type="radio" ng-model="scheduleType.type" value="OneTime" ng-click="showScheduler('oneTime')" name="checkboxes[249]" id="frm-test-elm-120-0" checked />
+                                <div class="btn-group">
+                                    <label for="frm-test-elm-120-0" class="btn btn-default">
+                                        <span class="fa fa-check-circle-o fa-lg"></span>
+                                        <span class="fa fa-circle-o fa-lg"></span>
+                                    </label>
+                                </div>
+                                <label class="control-label" for="frm-test-elm-120-0">One Time</label>
+                            </div>*@
                             <div>
-                                <input type="radio" ng-model="scheduleType.type" value="Hourly" ng-click="showScheduler('showHourly')" name="checkboxes[249]" id="frm-test-elm-120-1" checked />
+                                <input type="radio" ng-model="scheduleType.type" value="Hourly" ng-click="showScheduler('showHourly')" name="checkboxes[249]" id="frm-test-elm-120-1"  checked/>
                                 <div class="btn-group">
                                     <label for="frm-test-elm-120-1" class="btn btn-default">
                                         <span class="fa fa-check-circle-o fa-lg"></span>
@@ -264,6 +274,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="form-group row scheduler-right">
                                     <div class="scheduler scheduler-month col-sm-2">
                                         <input ng-show="showHourly" type="radio" ng-click="showScheduler('Days')" name="checkboxes[251]" id="frm-test-elm-120-starts" autocomplete="off" />
@@ -313,7 +324,7 @@
     $(document).ready(function () {
 
         $('#selectedWeek').multiselect({
-           
+
         });
 
         $('#weekDays').multiselect({

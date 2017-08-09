@@ -8,23 +8,21 @@
         $httpProvider.interceptors.push('interceptors');
 
         $routeProvider
-            .when("/Dashboard", {
-                templateUrl: "/Dashboard/Index",
-                controller: "LayoutController"
-            }).when("/NewAudit", {
-                templateUrl: "/Audit/Index",
-                controller: "AuditController"
-            })
-              .when("/ProductSetting", {
-                  templateUrl: "/Product/Index",
-                  controller: "ProductController"
-              })    
-              .when("/ViewAudit", {
-                  templateUrl: "/Audit/ViewAuditJobs",
-                  controller: "AuditController"
-              }).when("/blue", {
-                  templateUrl: "blue.htm"
-              })
+           .when("/NewAudit", {
+               templateUrl: "/Audit/Index",
+               controller: "AuditController"
+           }).when("/ProductSetting", {
+               templateUrl: "/Product/Index",
+               controller: "ProductController"
+           }).when("/ViewAudit", {
+               templateUrl: "/Audit/ViewAuditJobs",
+               controller: "AuditController"
+           }).when("/blue", {
+               templateUrl: "blue.htm"
+           }).otherwise({
+               templateUrl: "/Dashboard/Dashboard",
+               controller: "DashboardController"
+           });
     }]);
 
 })();

@@ -1,5 +1,5 @@
 ﻿app.controller('ProductController', ['$scope', '$sce', 'ProductService', '$filter', 'ngDialog', function ($scope, $sce, ProductService, $filter, ngDialog) {
-
+  
     $scope.productsConfigured = [];
     $scope.productsConfiguredFiltered = [];
     loadAllConfiguredProducts();

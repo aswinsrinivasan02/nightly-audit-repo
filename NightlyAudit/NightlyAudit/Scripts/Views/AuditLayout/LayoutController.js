@@ -20,7 +20,7 @@
     };
 
 
-    $('.underline').click(function () {
+    $('.underline,.big').click(function () {
         $scope.toggleMenuOut();
     });
 
