@@ -47,7 +47,7 @@
                     <div ng-hide="hideDynamicControl" class="form-group">
                         <label class="control-label col-sm-2">{{paramaterLabel}}</label>
                         <div class="col-sm-4">
-                            <ng-include id="ngInclude" ng-controller="AuditController" onload="item = auditParameterValuesList" src="tpl.contentUrl"></ng-include>
+                            <ng-include id="ngInclude" onload="item = auditParameterValuesList" src="tpl.contentUrl"></ng-include>
                         </div>
                     </div>
                     @*<ul class="list-unstyled list-inline pull-right">
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                         <div class="col-sm-10 scheduler-right">
-                            <form  name="schedulerForm">
+                            <form name="schedulerForm">
                                 <div ng-show="showHourlyDaily" class="form-group row scheduler-right">
                                     <div class="scheduler scheduler-month col-sm-2">
                                         <input type="radio" ng-click="showScheduler('Days')" name="checkboxes[251]" id="frm-test-elm-120-recurrence" autocomplete="off" checked />
@@ -120,19 +120,6 @@
                                         <label class="control-label col-sm-2">{{recurrenceText}}</label>
                                     </div>
                                 </div>
-                                @*<div ng-show="showDaily" class="form-group row scheduler-right">
-                                    <div class="scheduler scheduler-month col-sm-2">
-                                        <input type="radio" ng-click="showScheduler('Days')" name="checkboxes[251]" id="frm-test-elm-120-week-day" autocomplete="off" />
-                                        <div class="btn-group">
-                                            <label for="frm-test-elm-120-week-day" class="btn btn-default">
-                                                <span class="fa fa-check-circle-o fa-lg"></span>
-                                                <span class="fa fa-circle-o fa-lg"></span>
-                                            </label>
-                                        </div><div class="col-sm-2">
-                                            <label class="control-label col-sm-4">Every Week Day</label>
-                                        </div>
-                                    </div>
-                                </div>*@
                                 <div ng-show="showWeekly" class="form-group row scheduler scheduler-right">
                                     <div class="col col-sm-6 days-week">
                                         <input type="checkbox" ng-model="daysOfWeek.Sunday" ng-true-value="0" ng-false-value="false" name="checkboxes[100-0]" id="frm-test-elm-100-0" autocomplete="off" />
@@ -247,6 +234,7 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <select id="selectedWeek" name="selectedWeek">
+                                                <option value="">Select</option>
                                                 <option value="1">First</option>
                                                 <option value="2">Second</option>
                                                 <option value="3">Third</option>
@@ -325,7 +313,7 @@
     $(document).ready(function () {
 
         $('#selectedWeek').multiselect({
-            includeSelectAllOption: true
+           
         });
 
         $('#weekDays').multiselect({

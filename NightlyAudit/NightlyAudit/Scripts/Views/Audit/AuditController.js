@@ -33,11 +33,17 @@
                 $scope.auditParameterList = $scope.auditDTOList[selectedAuditIndex];
 
                 //to check if there can be multiple paramters
-                $scope.paramaterLabel = $scope.auditParameterList.AuditParameters[0].ParameterName + " " + ":";
+                $scope.paramaterLabel = $scope.auditParameterList.AuditParameters[0].ParameterName;
 
                 $scope.parameterType = $scope.auditParameterList.AuditParameters[0].ParameterType;
 
-                $scope.auditParameterValuesList = $scope.auditParameterList.AuditParameters[0].ParameterValues;
+
+                $scope.auditParameterValuesList = [];
+                angular.forEach($scope.auditParameterList.AuditParameters[0].ParameterValues, function (parameterValue) {
+
+                    $scope.auditParameterValuesList.push({ Value: parameterValue, Flag: false });
+
+                });
 
                 $scope.hideDynamicControl = false;
 
@@ -135,7 +141,9 @@
     };
 
     $scope.saveTask = function () {
-        
+
+        var ctrlElement = document.querySelector('#ngInclude');
+        var ctrlScope = angular.element(ctrlElement).scope();
         var selectedDays = [];
         var control = $scope.daysOfWeek;
         if ($scope.scheduleType.type == 'Monthly') {
@@ -157,13 +165,34 @@
         var scheduleObjectDTO = {
 
             ScheduleType: $scope.scheduleType.type,
-            ReoccurEveryX: $scope.ReoccurEveryX,
+            ReoccurEveryX: $scope.schedulerForm.ReoccurEveryX,
             SelectedDates: selectedDays,
-            ReoccurEveryXMonths: $scope.ReoccurEveryXMonths == null ? $scope.ReoccurEveryXMonthsOn : $scope.ReoccurEveryXMonths,
-            StartsAt: $('#datetimepicker').data('date'),
+            ReoccurEveryXMonths: $scope.schedulerForm.ReoccurEveryXMonths == null ? $scope.schedulerForm.ReoccurEveryXMonthsOn : $scope.schedulerForm.ReoccurEveryXMonths,
+            StartDateTime: new Date($('#datetimepicker').data('date')),
             SelectedWeek: $('#selectedWeek option:selected').val()
 
         };
+
+        var parametersChosen = $.grep($scope.auditParameterValuesList, function (e) { return e.Flag == true });
+        var parametersString = $.map(parametersChosen, function (obj) { return obj.Value }).join(',');
+
+        var parametersValue = {
+
+            parameterName: $scope.paramaterLabel,
+            parameterValues: parametersString
+        }
+
+        var jobDTO = {
+
+            JobId: 0,
+            AuditId: $scope.selectedAuditType.AuditId,
+            ParametersChosen: JSON.stringify(parametersValue),
+            ScheduleObject: scheduleObjectDTO,
+            IsEnabled: true
+
+        };
+
+        var isSaved = AuditService.saveAuditJob(jobDTO);
 
     };
 
@@ -175,6 +204,11 @@ app.service("AuditService", function ($http) {
     this.getAuditTypes = function (auditId) {
 
         return app.Ajax('GET', 'Audit/GetAuditTypes?auditId=' + auditId, '', $http);
+    }
+
+    this.saveAuditJob = function (jobDTO) {
+
+        return app.Ajax('POST', 'Audit/SaveAuditJob', jobDTO, $http);
     }
 });
 

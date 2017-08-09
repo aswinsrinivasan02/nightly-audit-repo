@@ -24,7 +24,13 @@ namespace Audit.Controllers
         {
             return PartialView("_"+controlType);
         }
-       
-        
+
+        [HttpPost]
+        public ActionResult SaveAuditJob(JobDTO jobDTO)
+        {
+            bool isSuccess= PlatformAPIProxy.ApplicationHelper.SaveJob(jobDTO);
+            return Json(new { success = isSuccess }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
