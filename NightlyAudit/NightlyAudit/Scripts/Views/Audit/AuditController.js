@@ -49,6 +49,24 @@
         });
     }
 
+    $scope.schedulerForm = {
+
+        'ReoccurEveryX': null,
+        'scheduleStartsAt': null,
+        'ReoccurEveryXMonthsOn': null
+    };
+
+    function clearControls() {
+        $scope.schedulerForm = {};
+        $scope.daysOfWeek = {};
+        angular.element("#datetimepicker >input")[0].value = null;
+        $('#weekDays').multiselect('deselectAll', false);
+        $('#weekDays').multiselect('updateButtonText');
+
+        $('#selectedWeek').multiselect('deselectAll', false);
+        $('#selectedWeek').multiselect('updateButtonText')
+    }
+
     $scope.loadDynamicControls = function (auditType) {
 
         if (auditType != null) {
@@ -60,6 +78,8 @@
     };
 
     $scope.showScheduler = function (showTypeCurrent) {
+
+        clearControls();
 
         if (showTypeCurrent != null) {
 
@@ -109,7 +129,43 @@
 
     };
 
+    $scope.scheduleType = {
 
+        type: 'Hourly'
+    };
+
+    $scope.saveTask = function () {
+        
+        var selectedDays = [];
+        var control = $scope.daysOfWeek;
+        if ($scope.scheduleType.type == 'Monthly') {
+            control = $('#weekDays option:selected');
+        }
+
+        angular.forEach(control, function (dayOfWeek) {
+            if ($scope.scheduleType.type == 'Monthly') {
+
+                selectedDays.push(dayOfWeek.value);
+            }
+            else {
+                selectedDays.push(dayOfWeek);
+            }
+
+        });
+
+
+        var scheduleObjectDTO = {
+
+            ScheduleType: $scope.scheduleType.type,
+            ReoccurEveryX: $scope.ReoccurEveryX,
+            SelectedDates: selectedDays,
+            ReoccurEveryXMonths: $scope.ReoccurEveryXMonths == null ? $scope.ReoccurEveryXMonthsOn : $scope.ReoccurEveryXMonths,
+            StartsAt: $('#datetimepicker').data('date'),
+            SelectedWeek: $('#selectedWeek option:selected').val()
+
+        };
+
+    };
 
 }]);
 
