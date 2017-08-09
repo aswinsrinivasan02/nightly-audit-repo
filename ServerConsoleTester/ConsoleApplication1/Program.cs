@@ -18,6 +18,17 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
 
+            string card = "%2291100002467?";
+            int propIdLength = 3;
+            int propIdStartPostion = 1;
+            int cardTrack = 1;
+            int accountLength = 9;
+            int accountstart = 5;
+            string[] cardTrackVal = card.Split(';');
+            string trackval = cardTrackVal[cardTrack - 1];
+            string propCode = trackval.Substring((propIdStartPostion - 1), propIdLength);
+            string accountNumber = trackval.Substring((accountstart - 1), accountLength);
+
             BallyTech.Infrastructure.Provider.IServiceProvider iServiceProvider = new BallyTech.Infrastructure.Provider.ServiceProvider(DIContainer.Init(), AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
             var hostingProvider = new HostingProvider(iServiceProvider.Configuration);
             string uri = System.Configuration.ConfigurationManager.AppSettings.Get("PlatformURI");

@@ -20,11 +20,9 @@ namespace SG.NightlyAudit.DTODomainConvertor
             scheduleObject.StartDateTime = jobEntity.StartDateTime;
             scheduleObject.ScheduleType = schTypes;
             scheduleObject.ReoccurEveryX = jobEntity.JobSchedule.ReoccurEveryX;
+            scheduleObject.ReoccurEveryXMonths = jobEntity.JobSchedule.ReoccurEveryXMonths;
+            scheduleObject.SelectedWeek = jobEntity.JobSchedule.SelectedWeek;
             scheduleObject.SelectedDates = jobEntity.JobSchedule.SelectedDates;
-            scheduleObject.SelectedDays = jobEntity.JobSchedule.SelectedDays;
-            scheduleObject.SelectedMonths = jobEntity.JobSchedule.SelectedMonths;
-            scheduleObject.SelectedOnWeek = jobEntity.JobSchedule.SelectedOnWeek;
-            scheduleObject.StartDateTime = jobEntity.JobSchedule.StartDateTime;
             jobDTO.ScheduleObject = scheduleObject;
             return jobDTO;
         }
@@ -43,10 +41,9 @@ namespace SG.NightlyAudit.DTODomainConvertor
             jobSchedule.ScheduleType = (int)jobDTO.ScheduleObject.ScheduleType;
             jobSchedule.StartDateTime = jobDTO.ScheduleObject.StartDateTime;
             jobSchedule.ReoccurEveryX = jobDTO.ScheduleObject.ReoccurEveryX;
+            jobSchedule.ReoccurEveryXMonths = jobDTO.ScheduleObject.ReoccurEveryXMonths;
+            jobSchedule.SelectedWeek = jobDTO.ScheduleObject.SelectedWeek;
             jobSchedule.SelectedDates = jobDTO.ScheduleObject.SelectedDates;
-            jobSchedule.SelectedDays = jobDTO.ScheduleObject.SelectedDays;
-            jobSchedule.SelectedMonths = jobDTO.ScheduleObject.SelectedMonths;
-            jobSchedule.SelectedOnWeek = jobDTO.ScheduleObject.SelectedOnWeek;
             jobEntity.JobSchedule = jobSchedule;
             return jobEntity;
 
