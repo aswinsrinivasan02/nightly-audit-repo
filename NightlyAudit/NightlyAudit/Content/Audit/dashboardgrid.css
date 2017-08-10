@@ -116,15 +116,12 @@
             width: 31px;
         }
 
-.work-progress-table .table td {
-    padding: 15px 10px;
-}
 
 .work-progress-table .table td {
     font-family: Lato;
     font-size: 13px;
     letter-spacing: 0.3px;
-    padding: 15px 10px;
+    padding: 8px 10px;
 }
 
 .red, .support-ticket .removed, .edit-remove > li > .remove, .friend-list li > span.offline:before {

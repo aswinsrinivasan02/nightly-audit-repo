@@ -1,134 +1,177 @@
 ﻿@{
     Layout = null;
 }
+@System.Web.Optimization.Scripts.Render("~/bundles/jquery")
 <div class="pageHeader">
     Dashboard
 </div>
 <div class="row">
-    <div class="col-md-8">
-        <div class="widget blank no-padding">
-            <div class="panel panel-default work-progress-table">
-                <!-- Default panel contents -->
-                <div class="panel-heading">
-                    Last 5 Audit Jobs
+    <div class="form-group">
+        <div class="col-md-8">
+            <div class="widget blank no-padding">
+                <div class="panel panel-default work-progress-table">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">
+                        Last 5 Audit Jobs
+                    </div>
+                    <!-- Table -->
+                    <table id="mytable" class="table">
+                        <thead>
+                            <tr>
+                                <th>Job Name</th>
+                                <th>Job CreatedBy</th>
+                                <th>Start Time</th>
+                                <th>Status</th>
+                                <th>View Report</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CMP Cache Audit</td>
+                                <td>Rajesh</td>
+                                <td>2017-07-13 10:21</td>
+                                <td><span class="label label-info">Pending</span></td>
+                                <td><button type="button" class="btn btn-primary btn-view-report"><i class="glyphicon glyphicon-list"></i></button></td>
+                            </tr>
+                            <tr>
+
+                                <td>ALH Purge Audit</td>
+                                <td>Ashwin</td>
+                                <td>2015-08-01 03:14</td>
+                                <td><span class="label label-primary">Due</span></td>
+                                <td><button type="button" class="btn btn-primary btn-view-report"><i class="glyphicon glyphicon-list"></i></button></td>
+                            </tr>
+                            <tr>
+
+                                <td>Cage Transaction</td>
+                                <td>Basil</td>
+                                <td>2017-07-09 14:21</td>
+                                <td><span class="label label-warning">Suspended</span></td>
+                                <td><button type="button" class="btn btn-primary btn-view-report"><i class="glyphicon glyphicon-list"></i></button></td>
+                            </tr>
+                            <tr>
+
+                                <td>Power Venue Points</td>
+                                <td>Ashwin</td>
+                                <td>2018-02-11 09:00</td>
+                                <td><span class="label label-success">Due</span></td>
+                                <td><button type="button" class="btn btn-primary btn-view-report"><i class="glyphicon glyphicon-list"></i></button></td>
+                            </tr>
+                            <tr>
+
+                                <td>Club Storage Audit</td>
+                                <td>Jagdish</td>
+                                <td>2017-08-16 10:15</td>
+                                <td><span class="label label-warning">Suspended</span></td>
+                                <td><button type="button" class="btn btn-primary btn-view-report"><i class="glyphicon glyphicon-list"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <!-- Table -->
-                <table id="mytable" class="table">
-                    <thead>
-                        <tr>
-                            <th>Job Name</th>
-                            <th>Job CreatedBy</th>
-                            <th>Email</th>
-
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>CMP Cache Audit</td>
-                            <td>Rajesh</td>
-                            <td>isometric.mohsin@gmail.com</td>
-
-                            <td><span class="label label-info">Pending</span></td>
-                        </tr>
-                        <tr>
-
-                            <td>ALH Purge Audit</td>
-                            <td>Ashwin</td>
-                            <td>haseeb@gmail.com</td>
-
-                            <td><span class="label label-primary">Due</span></td>
-                        </tr>
-                        <tr>
-
-                            <td>Cage Transaction</td>
-                            <td>Basil</td>
-                            <td>hussain@gmail.com</td>
-
-                            <td><span class="label label-warning">Suspended</span></td>
-                        </tr>
-                        <tr>
-
-                            <td>Power Venue Points</td>
-                            <td>Ashwin</td>
-                            <td>noman@gmail.com</td>
-
-                            <td><span class="label label-success">Due</span></td>
-                        </tr>
-                        <tr>
-
-                            <td>Club Storage Audit</td>
-                            <td>Jagdish</td>
-                            <td>ubaid@gmail.com</td>
-
-                            <td><span class="label label-warning">Suspended</span></td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
-    </div>
-    <div class="col-md-8">
-        <div class="widget blank no-padding">
-            <div class="panel panel-default work-progress-table">
-                <!-- Default panel contents -->
-                <div class="panel-heading">
-                    Last 5 Audit Jobs By You
-                </div>
-                <!-- Table -->
-                <table id="mytable" class="table">
-                    <thead>
-                        <tr>
-                            <th>Job Name</th>
-                            <th>Job CreatedBy</th>
-                            <th>Email</th>
-
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>CMP Cache Audit</td>
-                            <td>Rajesh</td>
-                            <td>isometric.mohsin@gmail.com</td>
-
-                            <td><span class="label label-info">Pending</span></td>
-                        </tr>
-                        <tr>
-
-                            <td>ALH Purge Audit</td>
-                            <td>Ashwin</td>
-                            <td>haseeb@gmail.com</td>
-
-                            <td><span class="label label-primary">Due</span></td>
-                        </tr>
-                        <tr>
-
-                            <td>Cage Transaction</td>
-                            <td>Basil</td>
-                            <td>hussain@gmail.com</td>
-
-                            <td><span class="label label-warning">Suspended</span></td>
-                        </tr>
-                        <tr>
-
-                            <td>Power Venue Points</td>
-                            <td>Ashwin</td>
-                            <td>noman@gmail.com</td>
-
-                            <td><span class="label label-success">Due</span></td>
-                        </tr>
-                        <tr>
-
-                            <td>Club Storage Audit</td>
-                            <td>Jagdish</td>
-                            <td>ubaid@gmail.com</td>
-
-                            <td><span class="label label-warning">Suspended</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="col-md-4">
+            <div class="pageHeader">
+                Jobs Status
             </div>
+            <div id="status-chart"></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-6">
+            <div class="widget blank no-padding">
+                <div class="panel panel-default work-progress-table">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">
+                        Last 5 Audit Jobs By You
+                    </div>
+                    <!-- Table -->
+                    <table id="mytable" class="table">
+                        <thead>
+                            <tr>
+                                <th>Job Name</th>
+                                <th>Start Time</th>
+                                <th>Status</th>
+                                <th>View Report</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CMP Cache Audit</td>
+                                <td>2017-07-13 10:21</td>
+                                <td><span class="label label-info">Pending</span></td>
+                                <td><button type="button" class="btn btn-primary btn-view-report"><i class="glyphicon glyphicon-list"></i></button></td>
+                            </tr>
+                            <tr>
+
+                                <td>ALH Purge Audit</td>
+                                <td>2015-08-01 03:14</td>
+                                <td><span class="label label-primary">Due</span></td>
+                                <td><button type="button" class="btn btn-primary btn-view-report"><i class="glyphicon glyphicon-list"></i></button></td>
+                            </tr>
+                            <tr>
+
+                                <td>Cage Transaction</td>
+                                <td>2017-07-09 14:21</td>
+                                <td><span class="label label-warning">Suspended</span></td>
+                                <td><button type="button" class="btn btn-primary btn-view-report"><i class="glyphicon glyphicon-list"></i></button></td>
+                            </tr>
+                            <tr>
+
+                                <td>Power Venue Points</td>
+                                <td>2018-02-11 09:00</td>
+                                <td><span class="label label-success">Due</span></td>
+                                <td><button type="button" class="btn btn-primary btn-view-report"><i class="glyphicon glyphicon-list"></i></button></td>
+                            </tr>
+                            <tr>
+
+                                <td>Club Storage Audit</td>
+                                <td>2017-08-16 10:15</td>
+                                <td><span class="label label-warning">Suspended</span></td>
+                                <td><button type="button" class="btn btn-primary btn-view-report"><i class="glyphicon glyphicon-list"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="pageHeader">
+                Year Wise Status
+            </div>
+            <div id="audit-status"></div>
         </div>
     </div>
 </div>
+<link href="~/Content/morris.min.css" rel="stylesheet" />
+<script src="~/Scripts/raphael.js"></script>
+<script src="~/Scripts/morris.js"></script>
+<script type="text/javascript">
+    Morris.Donut({
+        element: 'status-chart',
+        data: [
+          { label: "Pending", value: 12 },
+          { label: "Due", value: 30 },
+          { label: "Suspended", value: 20 },
+           { label: "Completed", value: 50 }
+        ]
+    });
+
+    Morris.Bar({
+        element: 'audit-status',
+        data: [
+           { y: '2012', a: 100, b: 90 },
+           { y: '2011', a: 75, b: 65 },
+           { y: '2010', a: 50, b: 40 },
+           { y: '2009', a: 75, b: 65 },
+           { y: '2008', a: 50, b: 40 },
+           { y: '2007', a: 75, b: 65 },
+           { y: '2006', a: 100, b: 90 }
+           ],
+        xkey: 'y',
+        ykeys: ['a', 'b'],
+        labels: ['Success', 'Failure'],
+        hideHover:'auto'
+    });
+
+</script>

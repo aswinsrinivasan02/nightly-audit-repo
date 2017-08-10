@@ -230,19 +230,22 @@ nav .btn_rollover {
     font-weight: normal !important;
 }
 
-.site-user-info
-{
+.site-user-info {
     color: white;
     /* background-color: white; */
-    float: right
+    float: right;
 }
 
-.disabled{
-    pointer-events:none;
-    opacity:0.5;
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
 }
 
-.date
-{
-    width:200px;
+.date {
+    width: 200px;
+}
+
+.btn-view-report {
+    width: 80px;
+    font-size: 18px;
 }
